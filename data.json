@@ -4,26 +4,61 @@
 	"github": "marineg404",
 	"profile": "À propos",
 	"info": "Ceci, vu l'endroit je crois que c'est plus le lieu pour une photo mais je respect le TP.",
-	"summary": "Coucou, ceci est un description de CV, mais je ne sais pas trop quoi mettre dedans parce que je sais pas où j'ai mis mon vrai CV.",
-	"skills": [
-		"HTML",
-		"CSS",
-		"JavaScript",
-		"quoi ?",
-		"feur"
+	"summary": "Étudiante en Bachelor Développement Web à l'ORT Lyon 8, je recherche un stage de 3 mois (juin à septembre 2026) afin de mettre en pratique mes compétences en développement full-stack au sein d'une entreprise innovante.",
+	"skills": {
+		"Développement": [
+			"HTML/CSS",
+			"JavaScript",
+			"Angular",
+			"React Native",
+			"Node.js",
+			"Express",
+			"PHP",
+			"Symfony",
+			"Python",
+			"Django",
+			"C++",
+			"C#",
+			"SQL"
+		],
+		"Outils & Environnements": [
+			"Git",
+			"Virtualisation",
+			"Linux",
+			"Windows",
+			"Wireshark",
+			"Cisco"
+		]
+	},
+	"langues": [
+		{
+			"Français": "natif"
+		},
+		{
+			"Anglais": "intermédiaire"
+		}
 	],
 	"professionalExperiences": [
 		{
-			"company": "Cogiceo",
-			"position": "Alternante Développeuse backend",
-			"duration": "Decembre 2024 - Septembre 2025",
-			"description": "Ça fait cher le burnout hahahahahah"
+			"position": "Alternante développeuse",
+			"company": "COGICEO",
+			"duration": "Déc. 2024 – Sept. 2025",
+			"missions": [
+				"Développement Python Django",
+				"Développement et amélioration des outils internes",
+				"Participation au développement d'un outil SaaS interne",
+				"Automatisation de processus",
+				"Suivi et résolution de tickets"
+			]
 		},
 		{
-			"company": "CIRISI",
 			"position": "Stagiaire",
-			"duration": "Juin 2023 - Juillet 2023",
-			"description": "on verra plus tard"
+			"company": "CIRISI Lyon",
+			"duration": "Mai – Juil. 2023",
+			"missions": [
+				"Installation de serveurs hyperviseurs et de machines virtuelles",
+				"Interventions techniques diverses"
+			]
 		}
 	],
 	"formations": [
@@ -46,6 +81,58 @@
 			"school": "La martinière monplaisir",
 			"degree": "Bac STI2D",
 			"duration": "2020 - 2022"
+		}
+	],
+	"other": [
+		{
+			"title": "Musique",
+			"desc": "Flûtiste traversière (harmonie/fanfare/cours)"
+		},
+		{
+			"title": "Jeux vidéo",
+			"desc": "Rubik’s Cube"
+		},
+		{
+			"title": "PSC1",
+			"desc": "Diplôme de premiers secours"
+		},
+		{
+			"title": "Communication",
+			"desc": "communication fanfare 'Les Binioufous'"
+		}
+	],
+	"contact": [
+		{
+			"type": "location",
+			"label": "Lyon (69006)"
+		},
+		{
+			"type": "phone",
+			"label": "07 68 34 94 21"
+		},
+		{
+			"type": "email",
+			"label": "marine.gonnord.pro@gmail.com"
+		},
+		{
+			"type": "github",
+			"label": "github.com/Marineg404"
+		},
+		{
+			"type": "website",
+			"label": "marine.gonnord.org"
+		},
+		{
+			"type": "linkedin",
+			"label": "LinkedIn : Marine GONNORD"
+		},
+		{
+			"type": "age",
+			"label": "21 ans"
+		},
+		{
+			"type": "car",
+			"label": "Permis en cours"
 		}
 	]
 }

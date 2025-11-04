@@ -38,31 +38,175 @@ function renderCv(profilData) {
 	subtitle.textContent = `${profilData.name} - ${profilData.post}`;
 	main.appendChild(subtitle);
 
-	const profile = document.createElement("div");
-	profile.id = "profile";
-	profile.textContent = `${profilData.profile}`;
-	main.appendChild(profile);
+	const profileSection = document.createElement("div");
+	profileSection.id = "profile-section";
+
+	const profileTitle = document.createElement("h3");
+	profileTitle.textContent = profilData.profile;
+	profileSection.appendChild(profileTitle);
+
+	const profileContent = document.createElement("div");
+	profileContent.id = "profile";
+	profileContent.textContent = profilData.summary;
+	profileSection.appendChild(profileContent);
+
+	main.appendChild(profileSection);
 
 
-	// left column: info
-	const info = document.createElement("div");
-	info.id = "info";
-	info.textContent = `${profilData.info}`;
+	// SIDEBAR - Order: Widget GitHub, Info, Contact, Compétences, Langues, Centres d'intérêt
 
+	// 1. Widget GitHub
 	if (profilData.github) {
 		renderGitHubWidget(profilData.github, sidebar).catch(err => {
 			console.warn('GitHub widget failed', err);
 		});
 	}
 
+	// 2. Info
+	const info = document.createElement("div");
+	info.id = "info";
+	info.textContent = `${profilData.info}`;
 	sidebar.appendChild(info);
 
+	// 3. Contact
+	if (profilData.contact && profilData.contact.length) {
+		const contactTitle = document.createElement("h2");
+		contactTitle.textContent = "Contact";
+		sidebar.appendChild(contactTitle);
+		const contactContainer = document.createElement("div");
+		contactContainer.className = "contact-container";
 
-	const summary = document.createElement("div");
-	summary.id = "summary";
-	summary.textContent = `${profilData.summary}`;
-	main.appendChild(summary);
+		// Map des types de contact vers les icônes Remix Icon et liens
+		const iconMap = {
+			location: "ri-map-pin-line",
+			phone: "ri-phone-line",
+			email: "ri-mail-line",
+			github: "ri-github-line",
+			website: "ri-global-line",
+			linkedin: "ri-linkedin-box-line",
+			age: "ri-cake-line",
+			car: "ri-car-line"
+		};
 
+		profilData.contact.forEach(item => {
+			const contactItem = document.createElement("div");
+			contactItem.className = "contact-item";
+
+			const icon = document.createElement("i");
+			icon.className = iconMap[item.type] || "ri-information-line";
+			contactItem.appendChild(icon);
+
+			if (item.type === "email") {
+				const link = document.createElement("a");
+				link.href = `mailto:${item.label}`;
+				link.textContent = item.label;
+				contactItem.appendChild(document.createTextNode(" "));
+				contactItem.appendChild(link);
+			} else if (item.type === "github") {
+				const link = document.createElement("a");
+				link.href = `https://${item.label}`;
+				link.target = "_blank";
+				link.rel = "noopener";
+				link.textContent = item.label;
+				contactItem.appendChild(document.createTextNode(" "));
+				contactItem.appendChild(link);
+			} else if (item.type === "website") {
+				const link = document.createElement("a");
+				link.href = `https://${item.label}`;
+				link.target = "_blank";
+				link.rel = "noopener";
+				link.textContent = item.label;
+				contactItem.appendChild(document.createTextNode(" "));
+				contactItem.appendChild(link);
+			} else if (item.type === "linkedin") {
+				const link = document.createElement("a");
+				// Extract URL from label if it contains "LinkedIn :"
+				const linkText = item.label;
+				link.href = "https://www.linkedin.com/in/marine-gonnord-7a1517234/";
+				link.target = "_blank";
+				link.rel = "noopener";
+				link.textContent = linkText;
+				contactItem.appendChild(document.createTextNode(" "));
+				contactItem.appendChild(link);
+			} else {
+				const text = document.createTextNode(" " + item.label);
+				contactItem.appendChild(text);
+			}
+
+			contactContainer.appendChild(contactItem);
+		});
+		sidebar.appendChild(contactContainer);
+	}
+
+	// 4. Compétences
+	const skillsTitle = document.createElement("h2");
+	skillsTitle.textContent = "Compétences";
+	sidebar.appendChild(skillsTitle);
+	const skillsContainer = document.createElement("div");
+	skillsContainer.id = "skills";
+	Object.keys(profilData.skills).forEach(category => {
+		const categoryTitle = document.createElement("h3");
+		categoryTitle.textContent = category;
+		skillsContainer.appendChild(categoryTitle);
+		const skillsGrid = document.createElement("div");
+		skillsGrid.className = "skills-grid";
+		profilData.skills[category].forEach(skill => {
+			const skillBadge = document.createElement("span");
+			skillBadge.className = "skill-badge";
+			skillBadge.textContent = skill;
+			skillsGrid.appendChild(skillBadge);
+		});
+		skillsContainer.appendChild(skillsGrid);
+	});
+	sidebar.appendChild(skillsContainer);
+
+	// 5. Langues
+	if (profilData.langues && profilData.langues.length) {
+		const languesTitle = document.createElement("h2");
+		languesTitle.textContent = "Langues";
+		sidebar.appendChild(languesTitle);
+		const languesGrid = document.createElement("div");
+		languesGrid.className = "langues-grid";
+		profilData.langues.forEach(lang => {
+			const key = Object.keys(lang)[0];
+			const langCard = document.createElement("div");
+			langCard.className = "langue-card";
+
+			const langName = document.createElement("div");
+			langName.className = "langue-name";
+			langName.textContent = key;
+
+			const langLevel = document.createElement("div");
+			langLevel.className = "langue-level";
+			langLevel.textContent = lang[key];
+
+			langCard.appendChild(langName);
+			langCard.appendChild(langLevel);
+			languesGrid.appendChild(langCard);
+		});
+		sidebar.appendChild(languesGrid);
+	}
+
+	// 6. Centres d'intérêt
+	if (profilData.other && profilData.other.length) {
+		const otherTitle = document.createElement("h2");
+		otherTitle.textContent = "Centres d'intérêt";
+		sidebar.appendChild(otherTitle);
+		const otherGrid = document.createElement("div");
+		otherGrid.className = "other-grid";
+		profilData.other.forEach(item => {
+			const badge = document.createElement("div");
+			badge.className = "interest-badge";
+			badge.setAttribute("data-tooltip", item.desc);
+			const title = document.createElement("span");
+			title.textContent = item.title;
+			badge.appendChild(title);
+			otherGrid.appendChild(badge);
+		});
+		sidebar.appendChild(otherGrid);
+	}
+
+	// MAIN CONTENT
 	// Projets personnels
 	const projectsTitle = document.createElement("h2");
 	projectsTitle.textContent = "Projets Personnels";
@@ -78,29 +222,34 @@ function renderCv(profilData) {
 	// load and render specific GitHub repos (hardcoded username inside function)
 	loadSelectedRepos().catch(err => console.warn('Failed to load selected repos', err));
 
-	const skillsTitle = document.createElement("h2");
-	skillsTitle.textContent = "Compétences";
-	main.appendChild(skillsTitle);
-	const skills = document.createElement("ul");
-	skills.id = "skills";
-	profilData.skills.forEach(skill => {
-		const skillItem = document.createElement("li");
-		skillItem.textContent = skill;
-		skills.appendChild(skillItem);
-	});
-	main.appendChild(skills);
-
 	const experiences = document.createElement("div");
 	experiences.id = "experiences";
 	const expTitle = document.createElement("h2");
 	expTitle.textContent = "Expériences Professionnelles";
 	experiences.appendChild(expTitle);
+
+	const experiencesGrid = document.createElement("div");
+	experiencesGrid.className = "experiences-grid";
+
 	profilData.professionalExperiences.forEach(exp => {
 		const expItem = document.createElement("div");
 		expItem.className = "experience-item";
-		expItem.innerHTML = `<strong>${exp.position}</strong> chez <em>${exp.company}</em> (${exp.duration})<br>${exp.description}`;
-		experiences.appendChild(expItem);
+		const header = document.createElement("div");
+		header.innerHTML = `<strong>${exp.position}</strong> chez <em>${exp.company}</em> (${exp.duration})`;
+		expItem.appendChild(header);
+		if (Array.isArray(exp.missions) && exp.missions.length) {
+			const missionsList = document.createElement("ul");
+			missionsList.className = "missions-list";
+			exp.missions.forEach(mission => {
+				const li = document.createElement("li");
+				li.textContent = mission;
+				missionsList.appendChild(li);
+			});
+			expItem.appendChild(missionsList);
+		}
+		experiencesGrid.appendChild(expItem);
 	});
+	experiences.appendChild(experiencesGrid);
 	main.appendChild(experiences);
 
 	const formations = document.createElement("div");
@@ -108,12 +257,17 @@ function renderCv(profilData) {
 	const formTitle = document.createElement("h2");
 	formTitle.textContent = "Formations";
 	formations.appendChild(formTitle);
+
+	const formationsGrid = document.createElement("div");
+	formationsGrid.className = "formations-grid";
+
 	profilData.formations.forEach(form => {
 		const formItem = document.createElement("div");
 		formItem.className = "formation-item";
 		formItem.innerHTML = `<strong>${form.degree}</strong> à <em>${form.school}</em> (${form.duration})`;
-		formations.appendChild(formItem);
+		formationsGrid.appendChild(formItem);
 	});
+	formations.appendChild(formationsGrid);
 	main.appendChild(formations);
 }
 
