@@ -36,10 +36,6 @@ function renderCv(profilData) {
 	const profileSection = document.createElement("div");
 	profileSection.id = "profile-section";
 
-	const profileTitle = document.createElement("h3");
-	profileTitle.textContent = profilData.profile;
-	profileSection.appendChild(profileTitle);
-
 	const profileContent = document.createElement("div");
 	profileContent.id = "profile";
 	profileContent.textContent = profilData.summary;
