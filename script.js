@@ -28,13 +28,8 @@ function renderCv(profilData) {
 	cv.appendChild(sidebar);
 	cv.appendChild(main);
 
-	const title = document.createElement("h1");
-	title.id = "title";
-	title.textContent = "Curriculum Vitae";
-	main.appendChild(title);
-
-	const subtitle = document.createElement("h2");
-	subtitle.id = "subtitle";
+	const subtitle = document.createElement("h1");
+	subtitle.id = "title";
 	subtitle.textContent = `${profilData.name} - ${profilData.post}`;
 	main.appendChild(subtitle);
 
@@ -303,3 +298,51 @@ function initTheme() {
 
 // run immediately so page renders with correct theme
 initTheme();
+
+// Print PDF button handler
+function initPrintButton() {
+	const printBtn = document.getElementById('print-pdf-btn');
+	if (!printBtn) return;
+
+	printBtn.addEventListener('click', () => {
+		// Save current theme
+		const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+
+		// Force light theme for printing
+		document.documentElement.setAttribute('data-theme', 'light');
+
+		// Wait a bit for the theme to apply, then print
+		setTimeout(() => {
+			window.print();
+
+			// Restore original theme after print dialog closes
+			// Listen for when print dialog is closed
+			const afterPrint = () => {
+				document.documentElement.setAttribute('data-theme', currentTheme);
+				window.removeEventListener('afterprint', afterPrint);
+			};
+			window.addEventListener('afterprint', afterPrint);
+		}, 100);
+	});
+}
+
+// Initialize print button when page loads
+initPrintButton();
+
+// Force light theme when printing (even with Ctrl+P)
+let savedThemeBeforePrint = null;
+
+window.addEventListener('beforeprint', () => {
+	// Save current theme
+	savedThemeBeforePrint = document.documentElement.getAttribute('data-theme') || 'light';
+	// Force light theme
+	document.documentElement.setAttribute('data-theme', 'light');
+});
+
+window.addEventListener('afterprint', () => {
+	// Restore original theme
+	if (savedThemeBeforePrint) {
+		document.documentElement.setAttribute('data-theme', savedThemeBeforePrint);
+		savedThemeBeforePrint = null;
+	}
+});

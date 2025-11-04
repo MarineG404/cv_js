@@ -10,7 +10,7 @@ Ce projet est un CV web dynamique, initialement réalisé dans le cadre d'un cou
 - Sidebar avec widget GitHub et contacts (icônes Remix Icon, liens cliquables)
 - Calcul automatique de l'âge en années et jours
 - Thème clair/sombre avec persistance (localStorage)
-- Responsive design 
+- Responsive design
 - Effets glassmorphism sur les cartes et badges
 - Chargement dynamique des projets GitHub
 
