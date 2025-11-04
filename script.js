@@ -96,7 +96,13 @@ function renderCv(profilData) {
 			icon.className = iconMap[item.type] || "ri-information-line";
 			contactItem.appendChild(icon);
 
-			if (item.type === "email") {
+			// Traitement spécial pour l'âge
+			if (item.type === "age") {
+				// Utilise la fonction du script age-calculator.js
+				const ageText = formatAge(item.label);
+				const text = document.createTextNode(" " + ageText);
+				contactItem.appendChild(text);
+			} else if (item.type === "email") {
 				const link = document.createElement("a");
 				link.href = `mailto:${item.label}`;
 				link.textContent = item.label;
