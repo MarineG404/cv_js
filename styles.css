@@ -1,0 +1,264 @@
+:root[data-theme="light"] {
+	--text: #222222;
+	--background: #F4F4F4;
+	--primary: #E53935;
+	--secondary: #adadad;
+	--accent: #E53935;
+
+	/* extra UI colors */
+	--card: #FFFFFF;
+	/* cartes ou sections */
+	--muted: #666666;
+	/* secondary text */
+	--border: #e6e6e6;
+	/* subtle borders */
+}
+
+:root[data-theme="dark"] {
+	/* Friend palette - dark */
+	--text: #E0E0E0;
+	/* Texte */
+	--background: #121212;
+	/* Fond */
+	--primary: #E53935;
+	/* Accents stay the same */
+	--secondary: #525252;
+	--accent: #E53935;
+
+	--card: #1E1E1E;
+	/* Cartes sombre */
+	--muted: #a0a0a0;
+	--border: #2a2a2a;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	height: 100vh;
+	color: var(--text);
+	background-color: var(--background);
+}
+
+
+h1 {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+h2 {
+	border-bottom: 2px solid var(--secondary);
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+h3 {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+#profile {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 0.5em;
+}
+
+#info {
+	font-style: italic;
+	margin-bottom: 1em;
+}
+
+#summary {
+	margin-bottom: 1em;
+}
+
+#skills {
+	list-style-type: square;
+	padding-left: 20px;
+}
+
+#skills li {
+	margin-bottom: 0.3em;
+}
+
+#cv {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 10px;
+	box-sizing: border-box;
+	background-color: var(--background);
+}
+
+#sidebar {
+	padding-right: 10px;
+	background: var(--primary);
+	color: #fff;
+	padding: 10px 10px 10px 10px;
+	text-align: justify;
+	border-right: 1px solid var(--border);
+}
+
+#sidebar a {
+	color: rgba(255, 255, 255, 0.95);
+}
+
+/* Ensure widgets placed in the colored sidebar use readable text and red accents */
+#sidebar .gh-widget {
+	color: var(--text);
+	background: var(--card);
+}
+
+#sidebar .gh-widget a {
+	color: var(--accent);
+}
+
+#sidebar .gh-widget a:hover {
+	color: var(--primary);
+}
+
+/* GitHub widget styling */
+.gh-widget {
+	background: var(--card);
+	padding: 12px;
+	border-radius: 6px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+	margin: 10px 0 18px 0;
+	max-width: 560px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid var(--border);
+}
+
+.gh-bio {
+	margin: 8px 0;
+	font-size: 0.9rem;
+	color: var(--text);
+}
+
+.gh-stats {
+	font-size: 0.85rem;
+	color: var(--muted);
+}
+
+.gh-meta {
+	font-size: 0.9rem;
+}
+
+.gh-name {
+	font-weight: 600;
+}
+
+/* top row inside GitHub widget */
+.gh-top {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.gh-avatar {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+}
+
+/* Discord vignette in sidebar */
+.discord-vignette {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.discord-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+/* Discord project cards */
+.discord-projects {
+	display: grid;
+	gap: 10px;
+}
+
+.discord-project-card {
+	border: 1px solid var(--border);
+	padding: 12px;
+	border-radius: 8px;
+	background: var(--card);
+}
+
+.discord-project-card .small {
+	font-size: 0.9rem;
+	color: var(--muted);
+}
+
+/* Layout for selected GitHub repos injected into #github-repos */
+#github-repos .selected-repos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+}
+
+@media (max-width: 900px) {
+	#github-repos .selected-repos {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 520px) {
+	#github-repos .selected-repos {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* selected repo card */
+.selected-repo-card {
+	border: 1px solid var(--border);
+	padding: 12px;
+	border-radius: 12px;
+	background: var(--card);
+}
+
+.selected-repo-card h3 a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 700;
+}
+
+/* global links and headings accents */
+a {
+	color: var(--primary);
+}
+
+a:hover {
+	color: var(--accent);
+}
+
+h1,
+h2 {
+	color: var(--primary);
+}
+
+.selected-repo-card h3 a {
+	color: var(--primary);
+	text-decoration: none;
+}
+
+.discord-name {
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+#main {
+	padding-left: 5px;
+}
+
+@media (max-width: 720px) {
+	#cv {
+		grid-template-columns: 1fr;
+	}
+}

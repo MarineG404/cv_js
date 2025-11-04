@@ -1,0 +1,51 @@
+{
+	"name": "Marine GONNORD",
+	"post": "Développeuse Web",
+	"github": "marineg404",
+	"profile": "À propos",
+	"info": "Ceci, vu l'endroit je crois que c'est plus le lieu pour une photo mais je respect le TP.",
+	"summary": "Coucou, ceci est un description de CV, mais je ne sais pas trop quoi mettre dedans parce que je sais pas où j'ai mis mon vrai CV.",
+	"skills": [
+		"HTML",
+		"CSS",
+		"JavaScript",
+		"quoi ?",
+		"feur"
+	],
+	"professionalExperiences": [
+		{
+			"company": "Cogiceo",
+			"position": "Alternante Développeuse backend",
+			"duration": "Decembre 2024 - Septembre 2025",
+			"description": "Ça fait cher le burnout hahahahahah"
+		},
+		{
+			"company": "CIRISI",
+			"position": "Stagiaire",
+			"duration": "Juin 2023 - Juillet 2023",
+			"description": "on verra plus tard"
+		}
+	],
+	"formations": [
+		{
+			"school": "ORT Lyon",
+			"degree": "Bachelor CDWFS",
+			"duration": "2025 - 2026"
+		},
+		{
+			"school": "ORT Lyon",
+			"degree": "Bachelor CSI",
+			"duration": "2024 - 2025"
+		},
+		{
+			"school": "ORT Lyon",
+			"degree": "BTS SNIR",
+			"duration": "2022 - 2024"
+		},
+		{
+			"school": "La martinière monplaisir",
+			"degree": "Bac STI2D",
+			"duration": "2020 - 2022"
+		}
+	]
+}
