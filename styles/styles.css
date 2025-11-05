@@ -307,6 +307,7 @@ a:hover {
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 16px;
 	margin-top: 20px;
+	align-items: stretch;
 }
 
 @media (max-width: 720px) {
@@ -321,11 +322,12 @@ a:hover {
 	border: 1px solid var(--border);
 	border-radius: 12px;
 	padding: 16px;
+	padding-bottom: 70px;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 	position: relative;
 	overflow: hidden;
-	height: fit-content;
+	min-height: 180px;
 }
 
 .selected-repo-card::before {
@@ -374,6 +376,42 @@ a:hover {
 	line-height: 1.5;
 }
 
+/* Description paragraph */
+.selected-repo-card p:nth-of-type(1) {
+	margin-bottom: 16px;
+}
+
+/* Stats (stars + forks) - positioned at bottom */
+.selected-repo-card p:nth-of-type(2) {
+	position: absolute;
+	bottom: 35px;
+	left: 16px;
+	right: 16px;
+	color: var(--muted);
+	font-size: 0.85rem;
+	margin: 0;
+}
+
+/* Language - positioned at bottom */
+.selected-repo-card p:nth-of-type(3) {
+	position: absolute;
+	bottom: 10px;
+	left: 16px;
+	right: 16px;
+	color: var(--muted);
+	font-size: 0.85rem;
+	margin: 0;
+}
+
+.selected-repo-card small {
+	position: absolute;
+	bottom: 16px;
+	left: 16px;
+	right: 16px;
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
 /* Experiences and Formations - Glassmorphism style + Responsive Grid */
 #experiences,
 #formations {
@@ -385,6 +423,7 @@ a:hover {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 16px;
+	align-items: stretch;
 }
 
 /* Large screen: 2 columns for formations and experiences */
@@ -408,7 +447,16 @@ a:hover {
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 	position: relative;
 	overflow: hidden;
-	height: fit-content;
+}
+
+.experience-item {
+	min-height: 120px;
+	display: flex;
+	flex-direction: column;
+}
+
+.formation-item {
+	padding: 12px 16px;
 }
 
 .experience-item::before,

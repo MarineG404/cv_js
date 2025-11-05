@@ -273,7 +273,7 @@ html {
 }
 
 .selected-repo-card {
-	padding: 6px 8px;
+	padding: 6px 8px !important;
 	font-size: 0.65rem;
 	line-height: 1.2;
 	border: 1px solid var(--border);
@@ -282,6 +282,7 @@ html {
 	page-break-inside: avoid;
 	background: white !important;
 	color: var(--color-text-secondary);
+	min-height: auto !important;
 }
 
 .selected-repo-card::before {
@@ -300,9 +301,16 @@ html {
 
 .selected-repo-card p {
 	font-size: 0.65rem;
-	margin: 2px 0;
+	margin: 2px 0 !important;
 	line-height: 1.2;
 	color: var(--color-text-secondary);
+	position: static !important;
+	bottom: auto !important;
+}
+
+.selected-repo-card p strong {
+	font-size: 0.6rem;
+	font-weight: 600;
 }
 
 h2 {
@@ -321,10 +329,11 @@ h2 {
 .experiences-grid {
 	grid-template-columns: 1fr !important;
 	gap: 5px;
+	align-items: stretch !important;
 }
 
 .experience-item {
-	padding: 6px 8px;
+	padding: 6px 8px !important;
 	font-size: 0.7rem;
 	line-height: 1.25;
 	border: 1px solid var(--border);
@@ -333,6 +342,8 @@ h2 {
 	page-break-inside: avoid;
 	background: white !important;
 	color: var(--color-text-secondary);
+	min-height: auto !important;
+	display: block !important;
 }
 
 .experience-item::before {
@@ -355,10 +366,11 @@ h2 {
 .formations-grid {
 	grid-template-columns: 1fr !important;
 	gap: 4px;
+	align-items: stretch !important;
 }
 
 .formation-item {
-	padding: 6px 8px;
+	padding: 6px 8px !important;
 	font-size: 0.7rem;
 	line-height: 1.25;
 	border: 1px solid var(--border);
@@ -367,6 +379,8 @@ h2 {
 	page-break-inside: avoid;
 	background: white !important;
 	color: var(--color-text-secondary);
+	min-height: auto !important;
+	display: block !important;
 }
 
 .formation-item::before {
