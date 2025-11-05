@@ -38,6 +38,49 @@
 	margin: 0;
 }
 
+@media print {
+
+	/* Force desktop layout even on mobile */
+	body {
+		width: 210mm !important;
+		height: 297mm !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		background: white !important;
+		font-family: Arial, sans-serif !important;
+		font-size: var(--text-md) !important;
+		position: relative !important;
+	}
+
+	html {
+		overflow: hidden !important;
+	}
+
+	/* Cancel all mobile responsive styles */
+	#cv {
+		display: grid !important;
+		grid-template-columns: 70mm 140mm !important;
+		flex-direction: row !important;
+		width: 210mm !important;
+		height: 297mm !important;
+	}
+
+	#sidebar {
+		order: 1 !important;
+		width: 70mm !important;
+		height: 297mm !important;
+		overflow: hidden !important;
+	}
+
+	#main {
+		order: 2 !important;
+		width: 140mm !important;
+		height: 297mm !important;
+		padding: var(--main-padding-top) 5mm var(--main-padding-bottom) 4mm !important;
+	}
+}
+
 * {
 	-webkit-print-color-adjust: exact !important;
 	print-color-adjust: exact !important;
@@ -458,13 +501,16 @@ h2 {
 #pdf-footer {
 	display: block;
 	position: fixed;
-	bottom: 4mm;
+	top: 290mm;
 	left: 70mm;
 	width: 140mm;
+	height: 7mm;
 	text-align: center;
 	font-size: var(--text-sm);
 	color: var(--color-text-muted);
-	padding: 2mm 0;
+	padding: 0;
+	margin: 0;
+	line-height: 7mm;
 }
 
 #pdf-footer a {
