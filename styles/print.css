@@ -17,6 +17,12 @@
 	--color-text-muted: #666666;
 	--color-accent-light: #F5F5F5;
 	--color-accent-border: #CCCCCC;
+
+	/* Text size system */
+	--text-xl: 1.3rem;
+	--text-lg: 0.88rem;
+	--text-md: 0.76rem;
+	--text-sm: 0.68rem;
 }
 
 /* Page setup for A4 */
@@ -37,6 +43,8 @@ body {
 	padding: 0;
 	overflow: hidden;
 	background: white;
+	font-family: Arial, sans-serif;
+	font-size: var(--text-md);
 }
 
 html {
@@ -66,7 +74,7 @@ html {
 #sidebar {
 	width: 70mm;
 	height: 297mm;
-	padding: 6mm 4mm;
+	padding: 4mm 4mm;
 	background: var(--sidebar-bg) !important;
 	color: var(--color-text-secondary) !important;
 	overflow: hidden;
@@ -75,11 +83,11 @@ html {
 }
 
 #sidebar h2 {
-	font-size: 1rem;
-	margin-top: 10px;
-	margin-bottom: 6px;
+	font-size: var(--text-lg);
+	margin-top: 5px;
+	margin-bottom: 3px;
 	border-bottom: 1px solid var(--primary);
-	padding-bottom: 3px;
+	padding-bottom: 2px;
 	color: var(--primary) !important;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -87,34 +95,34 @@ html {
 }
 
 #sidebar h3 {
-	font-size: 0.9rem;
-	margin-top: 7px;
-	margin-bottom: 4px;
+	font-size: var(--text-md);
+	margin-top: 4px;
+	margin-bottom: 2px;
 	color: var(--color-text-secondary) !important;
 	font-weight: 600;
 }
 
 /* Profile Picture */
 #profile-pic {
-	width: 35mm;
-	height: 35mm;
+	width: 30mm;
+	height: 30mm;
 	border-radius: 50%;
 	display: block;
-	margin: 0 auto 5mm auto;
+	margin: 0 auto 3mm auto;
 	border: 2px solid var(--color-accent-border);
 	object-fit: cover;
 }
 
 /* Compact contact */
 .contact-item {
-	font-size: 0.75rem;
-	margin-bottom: 2px;
-	gap: 5px;
+	font-size: var(--text-sm);
+	margin-bottom: 1px;
+	gap: 4px;
 	color: var(--color-text-secondary) !important;
 }
 
 .contact-item i {
-	font-size: 0.85rem;
+	font-size: var(--text-md);
 	color: var(--primary);
 }
 
@@ -134,17 +142,17 @@ html {
 
 /* Compact skills */
 #skills {
-	margin-bottom: 8px;
+	margin-bottom: 5px;
 }
 
 .skills-grid {
-	gap: 4px;
-	margin-bottom: 8px;
+	gap: 3px;
+	margin-bottom: 5px;
 }
 
 .skill-badge {
-	padding: 5px 10px;
-	font-size: 0.75rem;
+	padding: 4px 8px;
+	font-size: var(--text-sm);
 	background: white !important;
 	border: 1px solid var(--color-accent-border);
 	box-shadow: none;
@@ -158,12 +166,12 @@ html {
 
 /* Compact languages */
 .langues-grid {
-	gap: 3px;
-	margin-bottom: 6px;
+	gap: 2px;
+	margin-bottom: 4px;
 }
 
 .langue-card {
-	padding: 5px 8px;
+	padding: 4px 6px;
 	background: white !important;
 	border: 1px solid var(--color-accent-border);
 	box-shadow: none;
@@ -174,26 +182,26 @@ html {
 }
 
 .langue-name {
-	font-size: 0.7rem;
+	font-size: var(--text-sm);
 	margin-bottom: 1px;
 	color: var(--color-text-secondary) !important;
 	font-weight: 600;
 }
 
 .langue-level {
-	font-size: 0.6rem;
+	font-size: var(--text-sm);
 	color: var(--color-text-muted) !important;
 }
 
 /* Compact interests */
 .other-grid {
-	gap: 4px;
-	margin-bottom: 8px;
+	gap: 3px;
+	margin-bottom: 5px;
 }
 
 .interest-badge {
-	padding: 5px 10px;
-	font-size: 0.75rem;
+	padding: 4px 8px;
+	font-size: var(--text-sm);
 	background: white !important;
 	border: 1px solid var(--color-accent-border);
 	box-shadow: none;
@@ -210,36 +218,38 @@ html {
 #main {
 	width: 140mm;
 	height: 297mm;
-	padding: 6mm 6mm 6mm 5mm;
+	padding: 4mm 5mm 4mm 4mm;
 	overflow: hidden;
 	box-sizing: border-box;
 }
 
 #title {
-	font-size: 1.3rem;
-	margin-bottom: 0.2rem;
+	font-size: var(--text-xl);
+	margin-top: 0;
+	margin-bottom: 2px;
 	text-align: center;
 	color: var(--primary);
 	font-weight: 800;
 }
 
 #subtitle {
-	font-size: 0.9rem;
-	margin-bottom: 0.5rem;
+	font-size: var(--text-md);
+	margin-bottom: 0;
 	text-align: center;
 	border-bottom: 2px solid var(--primary);
-	padding-bottom: 3px;
+	padding-bottom: 2px;
 	color: var(--color-text-secondary);
 	font-weight: 600;
 }
 
 #profile-section {
-	margin-bottom: 0.6rem;
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 #profile-section h3 {
-	font-size: 0.85rem;
-	margin-bottom: 4px;
+	font-size: var(--text-md);
+	margin-bottom: 2px;
 	color: var(--primary);
 	font-weight: 700;
 	text-transform: uppercase;
@@ -247,9 +257,9 @@ html {
 }
 
 #profile {
-	padding: 8px 10px;
-	font-size: 0.7rem;
-	line-height: 1.3;
+	padding: 5px 7px;
+	font-size: var(--text-sm);
+	line-height: 1.2;
 	border: 1px solid var(--border);
 	border-radius: 3px;
 	box-shadow: none;
@@ -263,19 +273,20 @@ html {
 
 /* Show GitHub projects section in compact mode */
 #github-repos {
-	margin-bottom: 0.6rem;
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 #github-repos .selected-repos {
 	display: grid;
 	grid-template-columns: 1fr !important;
-	gap: 5px;
+	gap: 3px;
 }
 
 .selected-repo-card {
-	padding: 6px 8px !important;
-	font-size: 0.65rem;
-	line-height: 1.2;
+	padding: 5px 7px !important;
+	font-size: var(--text-sm);
+	line-height: 1.15;
 	border: 1px solid var(--border);
 	border-radius: 3px;
 	box-shadow: none;
@@ -290,8 +301,8 @@ html {
 }
 
 .selected-repo-card h3 {
-	font-size: 0.75rem;
-	margin: 0 0 3px 0;
+	font-size: var(--text-md);
+	margin: 0 0 2px 0;
 	color: var(--primary);
 }
 
@@ -300,42 +311,47 @@ html {
 }
 
 .selected-repo-card p {
-	font-size: 0.65rem;
-	margin: 2px 0 !important;
-	line-height: 1.2;
+	font-size: var(--text-sm);
+	margin: 1px 0 !important;
+	line-height: 1.15;
 	color: var(--color-text-secondary);
 	position: static !important;
 	bottom: auto !important;
 }
 
 .selected-repo-card p strong {
-	font-size: 0.6rem;
-	font-weight: 600;
+	font-size: var(--text-sm);
+	font-weight: normal;
+	font-family: Arial, sans-serif;
 }
 
 h2 {
-	font-size: 0.95rem;
-	margin-top: 0.6rem;
-	margin-bottom: 0.4rem;
+	font-size: var(--text-lg);
+	margin-top: 3px;
+	margin-bottom: 2px;
 	border-bottom: 2px solid var(--primary);
 	padding-bottom: 2px;
 	color: var(--primary) !important;
-	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 }
 
 /* Compact experiences */
+#experiences {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
 .experiences-grid {
 	grid-template-columns: 1fr !important;
-	gap: 5px;
+	gap: 3px;
 	align-items: stretch !important;
 }
 
 .experience-item {
-	padding: 6px 8px !important;
-	font-size: 0.7rem;
-	line-height: 1.25;
+	padding: 5px 7px !important;
+	font-size: var(--text-md);
+	line-height: 1.2;
 	border: 1px solid var(--border);
 	border-radius: 3px;
 	box-shadow: none;
@@ -350,29 +366,39 @@ h2 {
 	display: none;
 }
 
+.experience-item strong {
+	font-size: var(--text-md) !important;
+	font-weight: 700;
+}
+
 .missions-list {
-	margin-top: 4px;
-	padding-left: 14px;
-	font-size: 0.65rem;
+	margin-top: 3px;
+	padding-left: 12px;
+	font-size: var(--text-sm);
 	color: var(--color-text-secondary);
 }
 
 .missions-list li {
-	margin-bottom: 2px;
-	line-height: 1.2;
+	margin-bottom: 1px;
+	line-height: 1.15;
 }
 
 /* Compact formations */
+#formations {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
 .formations-grid {
 	grid-template-columns: 1fr !important;
-	gap: 4px;
+	gap: 3px;
 	align-items: stretch !important;
 }
 
 .formation-item {
-	padding: 6px 8px !important;
-	font-size: 0.7rem;
-	line-height: 1.25;
+	padding: 5px 7px !important;
+	font-size: var(--text-sm);
+	line-height: 1.2;
 	border: 1px solid var(--border);
 	border-radius: 3px;
 	box-shadow: none;
@@ -385,6 +411,23 @@ h2 {
 
 .formation-item::before {
 	display: none;
+}
+
+.formation-item strong {
+	font-size: var(--text-md) !important;
+	font-weight: 700;
+	display: block;
+	margin-bottom: 1px;
+}
+
+.formation-school {
+	font-size: var(--text-md) !important;
+	margin-bottom: 1px;
+}
+
+.formation-duration {
+	font-size: var(--text-sm) !important;
+	color: var(--color-text-muted);
 }
 
 /* Remove all hover effects */
@@ -405,11 +448,11 @@ h2 {
 #pdf-footer {
 	display: block;
 	position: fixed;
-	bottom: 5mm;
+	bottom: 4mm;
 	left: 70mm;
 	width: 140mm;
 	text-align: center;
-	font-size: 0.65rem;
+	font-size: var(--text-sm);
 	color: var(--color-text-muted);
 	padding: 2mm 0;
 }

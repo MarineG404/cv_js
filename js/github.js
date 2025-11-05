@@ -65,10 +65,7 @@ async function loadSelectedRepos() {
 			card.appendChild(stats);
 
 			const lang = document.createElement('p');
-			const strong = document.createElement('strong');
-			strong.textContent = 'Langage principal : ';
-			lang.appendChild(strong);
-			lang.insertAdjacentText('beforeend', `${repo.language || 'Non spécifié'}`);
+			lang.textContent = `Langage principal : ${repo.language || 'Non spécifié'}`;
 			card.appendChild(lang);
 
 			wrapper.appendChild(card);
