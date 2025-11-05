@@ -85,9 +85,19 @@ function renderCv(profilData) {
 			// Special handling for age
 			if (item.type === "age") {
 				// Use function from age-calculator.js script
-				const ageText = formatAge(item.label);
-				const text = document.createTextNode(" " + ageText);
-				contactItem.appendChild(text);
+				// Full version for web
+				const ageTextFull = formatAge(item.label);
+				const textFull = document.createElement("span");
+				textFull.className = "age-full";
+				textFull.textContent = " " + ageTextFull;
+				contactItem.appendChild(textFull);
+
+				// Simple version for print
+				const ageTextSimple = formatAgeSimple(item.label);
+				const textSimple = document.createElement("span");
+				textSimple.className = "age-simple";
+				textSimple.textContent = " " + ageTextSimple;
+				contactItem.appendChild(textSimple);
 			} else if (item.type === "email") {
 				const link = document.createElement("a");
 				link.href = `mailto:${item.label}`;

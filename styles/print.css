@@ -123,6 +123,15 @@ html {
 	text-decoration: none;
 }
 
+/* Age display - hide full version, show simple in print */
+.age-full {
+	display: none !important;
+}
+
+.age-simple {
+	display: inline !important;
+}
+
 /* Compact skills */
 #skills {
 	margin-bottom: 8px;

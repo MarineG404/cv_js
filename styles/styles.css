@@ -510,6 +510,15 @@ h2 {
 	border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Age display - show full version on screen, simple in print */
+.age-simple {
+	display: none;
+}
+
+.age-full {
+	display: inline;
+}
+
 /* Languages cards - Glassmorphism style */
 .langues-grid {
 	display: flex;

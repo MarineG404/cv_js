@@ -31,13 +31,26 @@ function calculateAge(birthDateString) {
 	// Number of days since last birthday
 	const daysSinceBirthday = Math.floor((today - lastBirthday) / (1000 * 60 * 60 * 24));
 
+	// Calculate months, weeks, and days
+	const months = Math.floor(daysSinceBirthday / 30);
+	const remainingDaysAfterMonths = daysSinceBirthday % 30;
+	const weeks = Math.floor(remainingDaysAfterMonths / 7);
+	const days = remainingDaysAfterMonths % 7;
+
 	return {
 		years: age,
-		days: daysSinceBirthday
+		months: months,
+		weeks: weeks,
+		days: days
 	};
 }
 
 function formatAge(birthDateString) {
-	const { years, days } = calculateAge(birthDateString);
-	return `${years} ans et ${days} jour${days > 1 ? 's' : ''}`;
+	const { years, months, weeks, days } = calculateAge(birthDateString);
+	return `${years} ans, ${months} mois, ${weeks} semaine${weeks > 1 ? 's' : ''} et ${days} jour${days > 1 ? 's' : ''}`;
+}
+
+function formatAgeSimple(birthDateString) {
+	const { years } = calculateAge(birthDateString);
+	return `${years} ans`;
 }
