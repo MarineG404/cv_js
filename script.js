@@ -101,7 +101,7 @@ function renderCv(profilData) {
 				contactItem.appendChild(link);
 			} else if (item.type === "github") {
 				const link = document.createElement("a");
-				link.href = `https://${item.label}`;
+				link.href = `https://github.com/${item.label}`;
 				link.target = "_blank";
 				link.rel = "noopener";
 				link.textContent = item.label;
