@@ -269,65 +269,6 @@ a:hover {
 	border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Ensure widgets placed in the colored sidebar use readable text and red accents */
-#sidebar .gh-widget {
-	color: var(--text);
-	background: var(--card);
-}
-
-#sidebar .gh-widget a {
-	color: var(--accent);
-}
-
-#sidebar .gh-widget a:hover {
-	color: var(--primary);
-}
-
-/* GitHub widget styling */
-.gh-widget {
-	background: var(--card);
-	padding: 12px;
-	border-radius: 6px;
-	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-	margin: 10px 0 18px 0;
-	max-width: 560px;
-	margin-left: auto;
-	margin-right: auto;
-	border: 1px solid var(--border);
-}
-
-.gh-bio {
-	margin: 8px 0;
-	font-size: 0.9rem;
-	color: var(--text);
-}
-
-.gh-stats {
-	font-size: 0.85rem;
-	color: var(--muted);
-}
-
-.gh-meta {
-	font-size: 0.9rem;
-}
-
-.gh-name {
-	font-weight: 600;
-}
-
-/* top row inside GitHub widget */
-.gh-top {
-	display: flex;
-	gap: 10px;
-	align-items: center;
-}
-
-.gh-avatar {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-}
-
 /* Discord vignette in sidebar */
 .discord-vignette {
 	display: flex;

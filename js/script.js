@@ -44,23 +44,17 @@ function renderCv(profilData) {
 	main.appendChild(profileSection);
 
 
-	// SIDEBAR - Order: GitHub Widget, Info, Contact, Skills, Languages, Interests
+	// SIDEBAR - Order: Profile Picture, Contact, Skills, Languages, Interests
 
-	// // 1. GitHub Widget
-	// if (profilData.github) {
-	// 	renderGitHubWidget(profilData.github, sidebar).catch(err => {
-	// 		console.warn('GitHub widget failed', err);
-	// 	});
-	// }
 
-	// 2. Profile Picture
+	// 1. Profile Picture
 	const profilePic = document.createElement("img");
 	profilePic.id = "profile-pic";
 	profilePic.src = "../img/image.png";
 	profilePic.alt = "Profile Picture";
 	sidebar.appendChild(profilePic);
 
-	// 3. Contact
+	// 2. Contact
 	if (profilData.contact && profilData.contact.length) {
 		const contactTitle = document.createElement("h2");
 		contactTitle.textContent = "Contact";
@@ -136,7 +130,7 @@ function renderCv(profilData) {
 		sidebar.appendChild(contactContainer);
 	}
 
-	// 4. Skills
+	// 3. Skills
 	const skillsTitle = document.createElement("h2");
 	skillsTitle.textContent = "Compétences";
 	sidebar.appendChild(skillsTitle);
@@ -158,7 +152,7 @@ function renderCv(profilData) {
 	});
 	sidebar.appendChild(skillsContainer);
 
-	// 5. Languages
+	// 4. Languages
 	if (profilData.langues && profilData.langues.length) {
 		const languesTitle = document.createElement("h2");
 		languesTitle.textContent = "Langues";
@@ -185,7 +179,7 @@ function renderCv(profilData) {
 		sidebar.appendChild(languesGrid);
 	}
 
-	// 6. Interests
+	// 5. Interests
 	if (profilData.other && profilData.other.length) {
 		const otherTitle = document.createElement("h2");
 		otherTitle.textContent = "Centres d'intérêt";
