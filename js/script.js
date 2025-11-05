@@ -1,6 +1,6 @@
 async function loadDataAndRender() {
 	try {
-		const res = await fetch('./data.json');
+		const res = await fetch('../data/data.json');
 		if (!res.ok) throw new Error(`HTTP ${res.status}`);
 		const profilData = await res.json();
 		renderCv(profilData);
