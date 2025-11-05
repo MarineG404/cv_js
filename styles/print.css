@@ -18,11 +18,18 @@
 	--color-accent-light: #F5F5F5;
 	--color-accent-border: #CCCCCC;
 
+	/* Spacing system */
+	--main-padding-top: 8mm;
+	--main-padding-bottom: 15mm;
+	--section-gap: 4mm;
+	--title-spacing: 4mm;
+	--card-gap: 2mm;
+
 	/* Text size system */
-	--text-xl: 1.3rem;
-	--text-lg: 0.88rem;
-	--text-md: 0.76rem;
-	--text-sm: 0.68rem;
+	--text-xl: 1.4rem;
+	--text-lg: 0.98rem;
+	--text-md: 0.86rem;
+	--text-sm: 0.78rem;
 }
 
 /* Page setup for A4 */
@@ -218,7 +225,7 @@ html {
 #main {
 	width: 140mm;
 	height: 297mm;
-	padding: 4mm 5mm 4mm 4mm;
+	padding: var(--main-padding-top) 5mm var(--main-padding-bottom) 4mm;
 	overflow: hidden;
 	box-sizing: border-box;
 }
@@ -226,7 +233,7 @@ html {
 #title {
 	font-size: var(--text-xl);
 	margin-top: 0;
-	margin-bottom: 2px;
+	margin-bottom: 1mm;
 	text-align: center;
 	color: var(--primary);
 	font-weight: 800;
@@ -234,7 +241,7 @@ html {
 
 #subtitle {
 	font-size: var(--text-md);
-	margin-bottom: 0;
+	margin-bottom: var(--section-gap);
 	text-align: center;
 	border-bottom: 2px solid var(--primary);
 	padding-bottom: 2px;
@@ -243,8 +250,8 @@ html {
 }
 
 #profile-section {
-	margin-top: 3px;
-	margin-bottom: 3px;
+	margin-top: var(--title-spacing);
+	margin-bottom: var(--section-gap);
 }
 
 #profile-section h3 {
@@ -273,14 +280,14 @@ html {
 
 /* Show GitHub projects section in compact mode */
 #github-repos {
-	margin-top: 3px;
-	margin-bottom: 3px;
+	margin-top: var(--title-spacing);
+	margin-bottom: var(--section-gap);
 }
 
 #github-repos .selected-repos {
 	display: grid;
 	grid-template-columns: 1fr !important;
-	gap: 3px;
+	gap: var(--card-gap);
 }
 
 .selected-repo-card {
@@ -326,11 +333,11 @@ html {
 }
 
 h2 {
+	margin-top: var(--title-spacing);
+	margin-bottom: var(--section-gap);
 	font-size: var(--text-lg);
-	margin-top: 3px;
-	margin-bottom: 2px;
 	border-bottom: 2px solid var(--primary);
-	padding-bottom: 2px;
+	padding-bottom: 1mm;
 	color: var(--primary) !important;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
@@ -338,13 +345,15 @@ h2 {
 
 /* Compact experiences */
 #experiences {
-	margin-top: 3px;
-	margin-bottom: 3px;
+	margin-top: var(--title-spacing);
+	margin-bottom: var(--section-gap);
 }
 
 .experiences-grid {
+	margin-top: var(--title-spacing);
+	margin-bottom: var(--section-gap);
 	grid-template-columns: 1fr !important;
-	gap: 3px;
+	gap: var(--card-gap);
 	align-items: stretch !important;
 }
 
@@ -385,13 +394,14 @@ h2 {
 
 /* Compact formations */
 #formations {
-	margin-top: 3px;
-	margin-bottom: 3px;
+	margin-top: var(--title-spacing);
+	margin-bottom: var(--section-gap);
+	;
 }
 
 .formations-grid {
 	grid-template-columns: 1fr !important;
-	gap: 3px;
+	gap: var(--card-gap);
 	align-items: stretch !important;
 }
 
