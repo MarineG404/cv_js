@@ -46,18 +46,19 @@ function renderCv(profilData) {
 
 	// SIDEBAR - Order: GitHub Widget, Info, Contact, Skills, Languages, Interests
 
-	// 1. GitHub Widget
-	if (profilData.github) {
-		renderGitHubWidget(profilData.github, sidebar).catch(err => {
-			console.warn('GitHub widget failed', err);
-		});
-	}
+	// // 1. GitHub Widget
+	// if (profilData.github) {
+	// 	renderGitHubWidget(profilData.github, sidebar).catch(err => {
+	// 		console.warn('GitHub widget failed', err);
+	// 	});
+	// }
 
-	// 2. Info
-	const info = document.createElement("div");
-	info.id = "info";
-	info.textContent = `${profilData.info}`;
-	sidebar.appendChild(info);
+	// 2. Profile Picture
+	const profilePic = document.createElement("img");
+	profilePic.id = "profile-pic";
+	profilePic.src = "../img/image.png";
+	profilePic.alt = "Profile Picture";
+	sidebar.appendChild(profilePic);
 
 	// 3. Contact
 	if (profilData.contact && profilData.contact.length) {
