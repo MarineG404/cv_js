@@ -1,37 +1,32 @@
+/* ==================== THEME VARIABLES ==================== */
+
+/* Light theme colors */
 :root[data-theme="light"] {
-	--accent: #E53935;
 	--text: #1a1a1a;
 	--background: #fafaf8;
 	--primary: #C44444;
 	--secondary: #D65555;
+	--accent: #E53935;
 	--sidebar-bg: #e8e8e8;
-	--title-color: #8b2c2c;
-
-	/* extra UI colors */
 	--card: #FFFFFF;
-	/* cartes ou sections */
 	--muted: #666666;
-	/* secondary text */
 	--border: #e6e6e6;
-	/* subtle borders */
 }
 
+/* Dark theme colors */
 :root[data-theme="dark"] {
-	/* Friend palette - dark */
 	--text: #E0E0E0;
-	/* Texte */
 	--background: #121212;
-	/* Fond */
 	--primary: #E53935;
-	/* Accents stay the same */
 	--secondary: #525252;
 	--accent: #E53935;
-
+	--sidebar-bg: #1E1E1E;
 	--card: #1E1E1E;
-	/* Cartes sombre */
 	--muted: #a0a0a0;
 	--border: #2a2a2a;
 }
+
+/* ==================== BASE STYLES ==================== */
 
 body {
 	font-family: Arial, sans-serif;
@@ -46,11 +41,12 @@ html {
 	overflow-x: hidden;
 }
 
-
+/* Typography */
 h1 {
 	font-size: 2em;
 	margin-bottom: 0.5em;
 	text-align: center;
+	color: var(--primary);
 }
 
 h2 {
@@ -58,12 +54,23 @@ h2 {
 	padding-bottom: 5px;
 	margin-bottom: 10px;
 	text-align: center;
+	color: var(--primary);
 }
 
 h3 {
 	margin-top: 15px;
 	margin-bottom: 5px;
 	color: var(--text);
+}
+
+/* Links */
+a {
+	color: var(--primary);
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: var(--accent);
 }
 
 #profile-section {
