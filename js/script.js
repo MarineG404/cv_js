@@ -261,6 +261,25 @@ function renderCv(profilData) {
 	});
 	formations.appendChild(formationsGrid);
 	main.appendChild(formations);
+
+	// PDF Footer (only visible when printing)
+	if (profilData.pdfFooter) {
+		const pdfFooter = document.createElement("div");
+		pdfFooter.id = "pdf-footer";
+
+		// Create clickable link
+		const footerText = document.createTextNode("Ce CV a été généré depuis le site ");
+		const link = document.createElement("a");
+		link.href = "https://marine.gonnord.org";
+		link.target = "_blank";
+		link.rel = "noopener";
+		link.textContent = "marine.gonnord.org";
+
+		pdfFooter.appendChild(footerText);
+		pdfFooter.appendChild(link);
+
+		main.appendChild(pdfFooter);
+	}
 }
 
 // start the app: fetch data and render

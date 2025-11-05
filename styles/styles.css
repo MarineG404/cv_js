@@ -697,6 +697,13 @@ h2 {
 	}
 }
 
+/* ==================== PDF FOOTER ==================== */
+
+/* Hide footer on screen, show only when printing */
+#pdf-footer {
+	display: none;
+}
+
 /* ==================== PRINT STYLES FOR PDF A4 ==================== */
 @media (max-width: 720px) {
 	#cv {

@@ -375,3 +375,23 @@ h2 {
 	transition: none !important;
 	animation: none !important;
 }
+
+/* ==================== PDF FOOTER ==================== */
+
+/* Show footer at bottom of PDF page */
+#pdf-footer {
+	display: block;
+	position: fixed;
+	bottom: 5mm;
+	left: 70mm;
+	width: 140mm;
+	text-align: center;
+	font-size: 0.65rem;
+	color: var(--color-text-muted);
+	padding: 2mm 0;
+}
+
+#pdf-footer a {
+	color: var(--color-text-muted);
+	text-decoration: none;
+}
