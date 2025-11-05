@@ -811,28 +811,6 @@ h2 {
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* ==================== RESPONSIVE BUTTONS ==================== */
-@media (max-width: 720px) {
-	.toggle-track {
-		width: 40px;
-		height: 20px;
-	}
-
-	.toggle-thumb {
-		width: 14px;
-		height: 14px;
-	}
-
-	[data-theme="dark"] .toggle-thumb {
-		left: 22px;
-	}
-
-	.sun-icon,
-	.moon-icon {
-		font-size: 10px;
-	}
-}
-
 /* ==================== PDF FOOTER ==================== */
 
 /* Hide footer on screen, show only when printing */
