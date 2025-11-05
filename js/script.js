@@ -44,9 +44,9 @@ function renderCv(profilData) {
 	main.appendChild(profileSection);
 
 
-	// SIDEBAR - Order: Widget GitHub, Info, Contact, Compétences, Langues, Centres d'intérêt
+	// SIDEBAR - Order: GitHub Widget, Info, Contact, Skills, Languages, Interests
 
-	// 1. Widget GitHub
+	// 1. GitHub Widget
 	if (profilData.github) {
 		renderGitHubWidget(profilData.github, sidebar).catch(err => {
 			console.warn('GitHub widget failed', err);
@@ -67,7 +67,7 @@ function renderCv(profilData) {
 		const contactContainer = document.createElement("div");
 		contactContainer.className = "contact-container";
 
-		// Map des types de contact vers les icônes Remix Icon et liens
+		// Map contact types to Remix Icon classes and links
 		const iconMap = {
 			location: "ri-map-pin-line",
 			phone: "ri-phone-line",
@@ -87,9 +87,9 @@ function renderCv(profilData) {
 			icon.className = iconMap[item.type] || "ri-information-line";
 			contactItem.appendChild(icon);
 
-			// Traitement spécial pour l'âge
+			// Special handling for age
 			if (item.type === "age") {
-				// Utilise la fonction du script age-calculator.js
+				// Use function from age-calculator.js script
 				const ageText = formatAge(item.label);
 				const text = document.createTextNode(" " + ageText);
 				contactItem.appendChild(text);
@@ -135,7 +135,7 @@ function renderCv(profilData) {
 		sidebar.appendChild(contactContainer);
 	}
 
-	// 4. Compétences
+	// 4. Skills
 	const skillsTitle = document.createElement("h2");
 	skillsTitle.textContent = "Compétences";
 	sidebar.appendChild(skillsTitle);
@@ -157,7 +157,7 @@ function renderCv(profilData) {
 	});
 	sidebar.appendChild(skillsContainer);
 
-	// 5. Langues
+	// 5. Languages
 	if (profilData.langues && profilData.langues.length) {
 		const languesTitle = document.createElement("h2");
 		languesTitle.textContent = "Langues";
@@ -184,7 +184,7 @@ function renderCv(profilData) {
 		sidebar.appendChild(languesGrid);
 	}
 
-	// 6. Centres d'intérêt
+	// 6. Interests
 	if (profilData.other && profilData.other.length) {
 		const otherTitle = document.createElement("h2");
 		otherTitle.textContent = "Centres d'intérêt";
@@ -204,7 +204,7 @@ function renderCv(profilData) {
 	}
 
 	// MAIN CONTENT
-	// Projets personnels
+	// Personal projects
 	const projectsTitle = document.createElement("h2");
 	projectsTitle.textContent = "Projets Personnels";
 	main.appendChild(projectsTitle);

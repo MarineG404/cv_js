@@ -6,7 +6,7 @@ async function loadSelectedRepos() {
 	if (!container) return;
 	container.innerHTML = '';
 
-	// Si la liste est vide, afficher un message
+	// If list is empty, show a message
 	if (wantedRepos.length === 0) {
 		const emptyMsg = document.createElement('p');
 		emptyMsg.textContent = 'Aucun projet sélectionné pour le moment.';
@@ -17,20 +17,20 @@ async function loadSelectedRepos() {
 	}
 
 	try {
-		// Récupère TOUS les repos publics
+		// Fetch ALL public repos
 		const response = await fetch(`https://api.github.com/users/${username}/repos`);
 		if (!response.ok) {
 			if (response.status === 403) {
-				throw new Error('Limite de requêtes GitHub atteinte. Réessayez dans quelques minutes.');
+				throw new Error('GitHub request limit reached. Try again in a few minutes.');
 			}
 			throw new Error(`GitHub API ${response.status}`);
 		}
 		const repos = await response.json();
 
-		// Filtre pour garder seulement ceux que tu veux
+		// Filter to keep only the ones you want
 		const selected = repos.filter(repo => wantedRepos.includes(repo.name));
 
-		// Si aucun repo trouvé, afficher un message
+		// If no repo found, show a message
 		if (selected.length === 0) {
 			const noRepoMsg = document.createElement('p');
 			noRepoMsg.textContent = 'Les projets sélectionnés n\'ont pas été trouvés.';
@@ -78,7 +78,7 @@ async function loadSelectedRepos() {
 	} catch (err) {
 		console.error('Failed to load GitHub repos', err);
 		const errorMsg = document.createElement('p');
-		errorMsg.textContent = err.message || 'Erreur lors du chargement des projets GitHub.';
+		errorMsg.textContent = err.message || 'Error loading GitHub projects.';
 		errorMsg.style.color = 'var(--accent)';
 		errorMsg.style.fontStyle = 'italic';
 		errorMsg.style.padding = '15px';
@@ -93,7 +93,7 @@ async function renderGitHubWidget(username, container) {
 		const resp = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}`);
 		if (!resp.ok) {
 			if (resp.status === 403) {
-				throw new Error('Limite de requêtes GitHub atteinte.');
+				throw new Error('GitHub request limit reached.');
 			}
 			throw new Error(`GitHub API ${resp.status}`);
 		}
@@ -146,14 +146,14 @@ async function renderGitHubWidget(username, container) {
 		container.appendChild(widget);
 	} catch (err) {
 		console.warn('Could not load GitHub user', err);
-		// Afficher un message d'erreur visible dans la sidebar
+		// Show a visible error message in the sidebar
 		const errorDiv = document.createElement('div');
 		errorDiv.style.color = 'rgba(255, 255, 255, 0.7)';
 		errorDiv.style.fontStyle = 'italic';
 		errorDiv.style.fontSize = '0.9rem';
 		errorDiv.style.padding = '10px';
 		errorDiv.style.textAlign = 'center';
-		errorDiv.textContent = err.message || 'Widget GitHub indisponible';
+		errorDiv.textContent = err.message || 'GitHub widget unavailable';
 		container.appendChild(errorDiv);
 	}
 }
