@@ -474,6 +474,24 @@ a:hover {
 	line-height: 1.6;
 }
 
+/* Formation item structure */
+.formation-item strong {
+	display: block;
+	margin-bottom: 4px;
+	color: var(--text);
+	font-size: 1rem;
+}
+
+.formation-school {
+	color: var(--text);
+	font-size: 0.9rem;
+}
+
+.formation-duration {
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
 /* global links and headings accents */
 a {
 	color: var(--primary);

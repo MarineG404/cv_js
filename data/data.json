@@ -64,22 +64,22 @@
 	"formations": [
 		{
 			"school": "ORT Lyon",
-			"degree": "Bachelor CDWFS",
+			"degree": "Bachelor CDWFS (Concepteur Développeur Web Full Stack)",
 			"duration": "2025 - 2026"
 		},
 		{
 			"school": "ORT Lyon",
-			"degree": "Bachelor CSI",
+			"degree": "Bachelor CSI (Concepteur de Systèmes d'Information)",
 			"duration": "2024 - 2025"
 		},
 		{
 			"school": "ORT Lyon",
-			"degree": "BTS SNIR",
+			"degree": "BTS SNIR (Systèmes Numériques option Informatique et Réseaux)",
 			"duration": "2022 - 2024"
 		},
 		{
 			"school": "La martinière monplaisir",
-			"degree": "Bac STI2D",
+			"degree": "Bac STI2D (Sciences et Technologies de l'Industrie et du Développement Durable)",
 			"duration": "2020 - 2022"
 		}
 	],

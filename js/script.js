@@ -266,7 +266,16 @@ function renderCv(profilData) {
 	profilData.formations.forEach(form => {
 		const formItem = document.createElement("div");
 		formItem.className = "formation-item";
-		formItem.innerHTML = `<strong>${form.degree}</strong> à <em>${form.school}</em> (${form.duration})`;
+
+		const title = document.createElement("div");
+		title.innerHTML = `<strong>${form.degree}</strong>`;
+		formItem.appendChild(title);
+
+		const schoolLine = document.createElement("div");
+		schoolLine.className = "formation-school";
+		schoolLine.innerHTML = `<em>${form.school}</em> <span class="formation-duration">(${form.duration})</span>`;
+		formItem.appendChild(schoolLine);
+
 		formationsGrid.appendChild(formItem);
 	});
 	formations.appendChild(formationsGrid);
