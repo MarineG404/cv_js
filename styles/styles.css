@@ -663,8 +663,38 @@ h2 {
 }
 
 @media (max-width: 720px) {
+	body {
+		overflow-y: auto;
+		height: auto;
+	}
+
 	#cv {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		overflow: visible;
+	}
+
+	#sidebar {
+		order: 2;
+		overflow-y: visible;
+		height: auto;
+	}
+
+	#main {
+		order: 1;
+		padding-top: 60px;
+		padding-bottom: 30px;
+		overflow-y: visible;
+		height: auto;
+	}
+
+	#theme-toggle {
+		right: 70px;
+	}
+
+	#print-pdf-btn {
+		right: 10px;
 	}
 }
 
@@ -756,13 +786,23 @@ h2 {
 
 /* ==================== RESPONSIVE BUTTONS ==================== */
 @media (max-width: 720px) {
-	#theme-toggle {
-		right: 150px;
+	.toggle-track {
+		width: 40px;
+		height: 20px;
 	}
 
-	#print-pdf-btn {
-		padding: 6px 12px;
-		font-size: 0.85rem;
+	.toggle-thumb {
+		width: 14px;
+		height: 14px;
+	}
+
+	[data-theme="dark"] .toggle-thumb {
+		left: 22px;
+	}
+
+	.sun-icon,
+	.moon-icon {
+		font-size: 10px;
 	}
 }
 
