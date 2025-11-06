@@ -57,7 +57,7 @@ async function loadSelectedRepos() {
 			card.appendChild(h3);
 
 			const desc = document.createElement('p');
-			desc.textContent = repo.description || 'Aucune description 😅';
+			desc.textContent = repo.description || 'Aucune description';
 			card.appendChild(desc);
 
 			const stats = document.createElement('p');
