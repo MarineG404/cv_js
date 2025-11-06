@@ -585,33 +585,58 @@ a:hover {
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Tooltip on hover */
+/* Liquid glass tooltip on hover */
 .interest-badge::after {
 	content: attr(data-tooltip);
 	position: absolute;
 	bottom: 100%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-8px);
-	background: rgba(0, 0, 0, 0.85);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	color: #fff;
-	padding: 10px 14px;
-	border-radius: 10px;
+	left: 0;
+	margin-bottom: 8px;
+	background: rgba(255, 255, 255, 0.98);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	color: #1a1a1a;
+	padding: 8px 12px;
+	border-radius: 20px;
 	font-size: 0.8rem;
-	white-space: nowrap;
+	max-width: 180px;
+	white-space: normal;
+	word-wrap: break-word;
+	text-align: left;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-		transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: opacity 0.3s ease, margin-bottom 0.3s ease;
 	z-index: 1000;
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Arrow pointer for tooltip */
+.interest-badge::before {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 16px;
+	margin-bottom: 1px;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid rgba(255, 255, 255, 0.98);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease, margin-bottom 0.3s ease;
+	z-index: 999;
 }
 
 .interest-badge:hover::after {
 	opacity: 1;
-	transform: translateX(-50%) translateY(-12px);
+	margin-bottom: 10px;
+}
+
+.interest-badge:hover::before {
+	opacity: 1;
+	margin-bottom: 3px;
 }
 
 #main {

@@ -90,7 +90,11 @@
 		},
 		{
 			"title": "Jeux vidéo",
-			"desc": "Rubik’s Cube"
+			"desc": "Fortnite, Animal Crossing, etc."
+		},
+		{
+			"title": "Rubik's Cube",
+			"desc": "Du 2*2*2 au 5*5*5 en passant par certains 'cubes' originaux"
 		},
 		{
 			"title": "PSC1",
@@ -98,7 +102,7 @@
 		},
 		{
 			"title": "Communication",
-			"desc": "communication fanfare 'Les Binioufous'"
+			"desc": "Communication fanfare 'Les Binioufous', ainsi que pour le festival Auribera (ENM de villeurbanne)."
 		}
 	],
 	"contact": [
