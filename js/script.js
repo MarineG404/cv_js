@@ -47,12 +47,10 @@ function renderCv(profilData) {
 	// SIDEBAR - Order: Profile Picture, Contact, Skills, Languages, Interests
 
 
-	// 1. Profile Picture
-	const profilePic = document.createElement("img");
-	profilePic.id = "profile-pic";
-	profilePic.src = "../img/image.png";
-	profilePic.alt = "Profile Picture";
-	sidebar.appendChild(profilePic);
+	// 1. Profile Picture placeholder (empty space)
+	const profilePicPlaceholder = document.createElement("div");
+	profilePicPlaceholder.id = "profile-pic-placeholder";
+	sidebar.appendChild(profilePicPlaceholder);
 
 	// 2. Contact
 	if (profilData.contact && profilData.contact.length) {
@@ -237,7 +235,7 @@ function renderCv(profilData) {
 		const expItem = document.createElement("div");
 		expItem.className = "experience-item";
 		const header = document.createElement("div");
-		header.innerHTML = `<strong>${exp.position}</strong> chez <em>${exp.company}</em> (${exp.duration})`;
+		header.innerHTML = `<strong>${exp.position}</strong> chez ${exp.company} (${exp.duration})`;
 		expItem.appendChild(header);
 		if (Array.isArray(exp.missions) && exp.missions.length) {
 			const missionsList = document.createElement("ul");
@@ -268,8 +266,14 @@ function renderCv(profilData) {
 		formItem.className = "formation-item";
 
 		const title = document.createElement("div");
+		title.className = "formation-title";
 		title.innerHTML = `<strong>${form.degree}</strong>`;
 		formItem.appendChild(title);
+
+		const titleDetails = document.createElement("div");
+		titleDetails.className = "formation-details";
+		titleDetails.innerHTML = form.details;
+		formItem.appendChild(titleDetails);
 
 		const schoolLine = document.createElement("div");
 		schoolLine.className = "formation-school";

@@ -1,6 +1,6 @@
 async function loadSelectedRepos() {
-	const username = "marineg404";
-	const wantedRepos = ["Fokuz", "ADHDragon", "Stephagramme"];
+	const username = "MarineG404";
+	const wantedRepos = ["Fokuz", "Stephagramme", "ADHDragon"];
 
 	const container = document.getElementById('github-repos');
 	if (!container) return;
@@ -27,8 +27,10 @@ async function loadSelectedRepos() {
 		}
 		const repos = await response.json();
 
-		// Filter to keep only the ones you want
-		const selected = repos.filter(repo => wantedRepos.includes(repo.name));
+		// Filter to keep only the ones you want and sort by wantedRepos order
+		const selected = repos
+			.filter(repo => wantedRepos.includes(repo.name))
+			.sort((a, b) => wantedRepos.indexOf(a.name) - wantedRepos.indexOf(b.name));
 
 		// If no repo found, show a message
 		if (selected.length === 0) {
@@ -61,7 +63,7 @@ async function loadSelectedRepos() {
 			card.appendChild(desc);
 
 			const stats = document.createElement('p');
-			stats.textContent = `★ ${repo.stargazers_count} | Forks: ${repo.forks_count}`;
+			stats.textContent = `★ ${repo.stargazers_count}`;
 			card.appendChild(stats);
 
 			const lang = document.createElement('p');

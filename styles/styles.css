@@ -61,6 +61,8 @@ h2 {
 	border-bottom: 2px solid var(--secondary);
 	padding-bottom: 5px;
 	margin: var(--title-margin-top) 0 var(--title-margin-bottom) 0;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 h3 {
@@ -171,6 +173,14 @@ a:hover {
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Profile Picture Placeholder (empty space) */
+#profile-pic-placeholder {
+	width: 150px;
+	height: 150px;
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
 /* Skills & Interest badges - Glassmorphism */
 #skills {
 	margin-bottom: 1em;
@@ -240,7 +250,16 @@ a:hover {
 	color: rgba(255, 255, 255, 0.95);
 }
 
-#sidebar h2,
+#sidebar h2 {
+	color: #fff;
+	border-bottom-color: rgba(255, 255, 255, 0.3);
+	margin-top: 0;
+}
+
+#sidebar h2:first-of-type {
+	margin-top: 0;
+}
+
 #sidebar h3 {
 	color: #fff;
 	border-bottom-color: rgba(255, 255, 255, 0.3);
@@ -420,20 +439,30 @@ a:hover {
 .missions-list {
 	margin-top: 10px;
 	padding-left: 20px;
+	margin-bottom: 0;
 }
 
 .missions-list li {
-	margin-bottom: 6px;
 	color: var(--text);
 	line-height: 1.6;
 }
 
 /* Formation structure */
+.formation-title {
+	display: inline;
+}
+
 .formation-item strong {
-	display: block;
-	margin-bottom: 4px;
+	display: inline;
 	color: var(--text);
 	font-size: 1rem;
+}
+
+.formation-details {
+	display: inline;
+	color: var(--text);
+	font-size: 0.95rem;
+	margin-left: 8px;
 }
 
 .formation-school {
@@ -641,6 +670,10 @@ a:hover {
 
 #main {
 	padding-left: 5px;
+}
+
+#main h2:first-of-type {
+	margin-top: 0;
 }
 
 /* ==================== RESPONSIVE - MOBILE ==================== */

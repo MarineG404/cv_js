@@ -1,7 +1,7 @@
 {
 	"name": "Marine GONNORD",
 	"post": "Développeuse Web",
-	"github": "marineg404",
+	"github": "MarineG404",
 	"profile": "À propos",
 	"summary": "Étudiante en Bachelor Développement Web à l'ORT Lyon 8, je recherche un stage de 3 mois (juin à septembre 2026) afin de mettre en pratique mes compétences en développement full-stack au sein d'une entreprise innovante.",
 	"pdfFooter": "Ce CV a été généré depuis le site marine.gonnord.org",
@@ -32,10 +32,10 @@
 	},
 	"langues": [
 		{
-			"Français": "natif"
+			"Français": "Natif"
 		},
 		{
-			"Anglais": "intermédiaire"
+			"Anglais": "Intermédiaire"
 		}
 	],
 	"professionalExperiences": [
@@ -64,22 +64,26 @@
 	"formations": [
 		{
 			"school": "ORT Lyon",
-			"degree": "Bachelor CDWFS (Concepteur Développeur Web Full Stack)",
+			"degree": "Bachelor CDWFS",
+			"details": "(Concepteur Développeur Web Full Stack)",
 			"duration": "2025 - 2026"
 		},
 		{
 			"school": "ORT Lyon",
-			"degree": "Bachelor CSI (Concepteur de Systèmes d'Information)",
+			"degree": "Bachelor CSI",
+			"details": "(Concepteur de Systèmes d'Information)",
 			"duration": "2024 - 2025"
 		},
 		{
 			"school": "ORT Lyon",
-			"degree": "BTS SNIR (Systèmes Numériques option Informatique et Réseaux)",
+			"degree": "BTS SNIR",
+			"details": "(Systèmes Numériques option Informatique et Réseaux)",
 			"duration": "2022 - 2024"
 		},
 		{
-			"school": "La martinière monplaisir",
-			"degree": "Bac STI2D (Sciences et Technologies de l'Industrie et du Développement Durable)",
+			"school": "La Martinière Monplaisir",
+			"degree": "Bac STI2D",
+			"details": "(Sciences et Technologies de l'Industrie et du Développement Durable)",
 			"duration": "2020 - 2022"
 		}
 	],
@@ -95,10 +99,6 @@
 		{
 			"title": "Rubik's Cube",
 			"desc": "Du 2*2*2 au 5*5*5 en passant par certains 'cubes' originaux"
-		},
-		{
-			"title": "PSC1",
-			"desc": "Diplôme de premiers secours"
 		},
 		{
 			"title": "Communication",
@@ -120,7 +120,7 @@
 		},
 		{
 			"type": "github",
-			"label": "Marineg404"
+			"label": "MarineG404"
 		},
 		{
 			"type": "website",
