@@ -10,9 +10,12 @@
 	--card: #FFFFFF;
 	--muted: #666666;
 	--border: #e6e6e6;
-	--section-spacing: 2em;
-	--title-margin-top: 1.5em;
-	--title-margin-bottom: 1em;
+
+	/* Spacing System */
+	--spacing-section: 2.5rem;
+	--spacing-subsection: 1.5rem;
+	--spacing-content: 1rem;
+	--spacing-small: 0.5rem;
 }
 
 :root[data-theme="dark"] {
@@ -25,9 +28,12 @@
 	--card: #1E1E1E;
 	--muted: #a0a0a0;
 	--border: #2a2a2a;
-	--section-spacing: 2em;
-	--title-margin-top: 1.5em;
-	--title-margin-bottom: 1em;
+
+	/* Spacing System */
+	--spacing-section: 2.5rem;
+	--spacing-subsection: 1.5rem;
+	--spacing-content: 1rem;
+	--spacing-small: 0.5rem;
 }
 
 /* ==================== BASE STYLES ==================== */
@@ -45,24 +51,23 @@ html {
 	overflow-x: hidden;
 }
 
-/* Typography */
-h1,
-h2 {
-	text-align: center;
-	color: var(--primary);
-}
+/* ==================== TYPOGRAPHY ==================== */
 
 h1 {
 	font-size: 2em;
-	margin: 0 0 var(--title-margin-bottom) 0;
+	margin: 0 0 var(--spacing-content) 0;
+	text-align: center;
+	color: var(--primary);
 }
 
 h2 {
 	border-bottom: 2px solid var(--secondary);
 	padding-bottom: 5px;
-	margin: var(--title-margin-top) 0 var(--title-margin-bottom) 0;
+	margin: 0 0 var(--spacing-subsection) 0;
 	width: 100%;
 	box-sizing: border-box;
+	text-align: center;
+	color: var(--primary);
 }
 
 h3 {
@@ -81,8 +86,69 @@ a:hover {
 	color: var(--accent);
 }
 
+/* ==================== LAYOUT ==================== */
+
+#cv {
+	width: 100vw;
+	max-width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 340px 1fr;
+	gap: 10px;
+	box-sizing: border-box;
+	background-color: var(--background);
+	overflow-x: hidden;
+}
+
+#sidebar {
+	padding: 10px;
+	background: var(--primary);
+	color: #fff;
+	text-align: justify;
+	border-right: 1px solid var(--border);
+	overflow-y: auto;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+#sidebar::-webkit-scrollbar {
+	display: none;
+}
+
+#sidebar a {
+	color: rgba(255, 255, 255, 0.95);
+}
+
+#sidebar h2 {
+	color: #fff;
+	border-bottom-color: rgba(255, 255, 255, 0.3);
+	margin-top: var(--spacing-subsection);
+}
+
+#sidebar h2:first-of-type {
+	margin-top: 0;
+}
+
+#sidebar h3 {
+	color: #fff;
+	border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+#main {
+	padding: var(--spacing-section) 15px 50px 5px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#main h2:first-of-type {
+	margin-top: 0;
+}
+
+/* ==================== PROFILE SECTION ==================== */
+
 #profile-section {
-	margin-bottom: var(--section-spacing);
+	margin-bottom: var(--spacing-section);
 }
 
 #profile-section h3 {
@@ -181,309 +247,11 @@ a:hover {
 	margin: 0 auto 20px auto;
 }
 
-/* Skills & Interest badges - Glassmorphism */
-#skills {
-	margin-bottom: 1em;
-}
-
-.skills-grid {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	margin-bottom: 15px;
-}
-
-.skill-badge {
-	background: rgba(255, 255, 255, 0.15);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	color: #fff;
-	padding: 10px 16px;
-	border-radius: 25px;
-	font-size: 0.9rem;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.skill-badge:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-#cv {
-	width: 100vw;
-	max-width: 100%;
-	height: 100vh;
-	display: grid;
-	grid-template-columns: 340px 1fr;
-	gap: 10px;
-	box-sizing: border-box;
-	background-color: var(--background);
-	overflow-x: hidden;
-}
-
-#sidebar {
-	padding: 10px;
-	background: var(--primary);
-	color: #fff;
-	text-align: justify;
-	border-right: 1px solid var(--border);
-	overflow-y: auto;
-	overflow-x: hidden;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-}
-
-#sidebar::-webkit-scrollbar {
-	display: none;
-}
-
-#main {
-	margin-top: var(--section-spacing);
-	padding: 0 15px 50px 5px;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
-#sidebar a {
-	color: rgba(255, 255, 255, 0.95);
-}
-
-#sidebar h2 {
-	color: #fff;
-	border-bottom-color: rgba(255, 255, 255, 0.3);
-	margin-top: 0;
-}
-
-#sidebar h2:first-of-type {
-	margin-top: 0;
-}
-
-#sidebar h3 {
-	color: #fff;
-	border-bottom-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Discord elements */
-.discord-vignette {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	margin-bottom: 12px;
-}
-
-.discord-avatar {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-}
-
-.discord-projects {
-	display: grid;
-	gap: 10px;
-}
-
-.discord-project-card {
-	border: 1px solid var(--border);
-	padding: 12px;
-	border-radius: 8px;
-	background: var(--card);
-}
-
-.discord-project-card .small {
-	font-size: 0.9rem;
-	color: var(--muted);
-}
-
-.discord-name {
-	font-size: 0.9rem;
-	font-weight: 600;
-}
-
-/* GitHub repos grid */
-#github-repos .selected-repos {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 16px;
-	margin-top: 20px;
-	align-items: stretch;
-}
-
-/* GitHub repo cards */
-.selected-repo-card {
-	background: var(--card);
-	border: 1px solid var(--border);
-	border-radius: 12px;
-	padding: 16px 16px 70px 16px;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-	position: relative;
-	overflow: hidden;
-	min-height: 180px;
-}
-
-/* Card hover effects (repos, experiences, formations) */
-.selected-repo-card::before,
-#summary::before,
-.experience-item::before,
-.formation-item::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(90deg, transparent, rgba(229, 57, 53, 0.03), transparent);
-	transition: left 0.5s ease;
-}
-
-.selected-repo-card:hover::before,
-#summary:hover::before,
-.experience-item:hover::before,
-.formation-item:hover::before {
-	left: 100%;
-}
-
-.selected-repo-card:hover,
-#profile:hover,
-#summary:hover,
-.experience-item:hover,
-.formation-item:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-	border-color: var(--accent);
-}
-
-.selected-repo-card h3 {
-	margin: 0 0 10px 0;
-}
-
-.selected-repo-card h3 a {
-	color: var(--accent);
-	font-weight: 700;
-	transition: color 0.3s ease;
-}
-
-.selected-repo-card h3 a:hover {
-	color: var(--primary);
-}
-
-/* Repo card content positioning */
-.selected-repo-card p {
-	margin: 8px 0;
-	color: var(--text);
-	line-height: 1.5;
-}
-
-.selected-repo-card p:nth-of-type(1) {
-	margin-bottom: 16px;
-}
-
-.selected-repo-card p:nth-of-type(2) {
-	position: absolute;
-	bottom: 35px;
-	left: 16px;
-	right: 16px;
-	color: var(--muted);
-	font-size: 0.85rem;
-	margin: 0;
-}
-
-.selected-repo-card p:nth-of-type(3) {
-	position: absolute;
-	bottom: 10px;
-	left: 16px;
-	right: 16px;
-	color: var(--muted);
-	font-size: 0.85rem;
-	margin: 0;
-}
-
-/* Experiences & Formations */
-#experiences,
-#formations {
-	margin-bottom: var(--section-spacing);
-}
-
-.experiences-grid,
-.formations-grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 16px;
-	align-items: stretch;
-}
-
-.experience-item,
-.formation-item {
-	background: var(--card);
-	border: 1px solid var(--border);
-	border-radius: 12px;
-	padding: 16px;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-	position: relative;
-	overflow: hidden;
-}
-
-.experience-item {
-	min-height: 120px;
-	display: flex;
-	flex-direction: column;
-}
-
-.formation-item {
-	padding: 12px 16px;
-}
-
-.missions-list {
-	margin-top: 10px;
-	padding-left: 20px;
-	margin-bottom: 0;
-}
-
-.missions-list li {
-	color: var(--text);
-	line-height: 1.6;
-}
-
-/* Formation structure */
-.formation-title {
-	display: inline;
-}
-
-.formation-item strong {
-	display: inline;
-	color: var(--text);
-	font-size: 1rem;
-}
-
-.formation-details {
-	display: inline;
-	color: var(--text);
-	font-size: 0.95rem;
-	margin-left: 8px;
-}
-
-.formation-school {
-	color: var(--text);
-	font-size: 0.9rem;
-}
-
-.formation-duration {
-	color: var(--muted);
-	font-size: 0.85rem;
-}
-
-/* Discord & additional elements */
-.discord-name {
-	font-size: 0.9rem;
-	font-weight: 600;
-}
+/* ==================== SIDEBAR SECTIONS ==================== */
 
 /* Contact items */
 .contact-container {
-	margin-bottom: 1em;
+	margin-bottom: var(--spacing-subsection);
 }
 
 .contact-item {
@@ -526,6 +294,36 @@ a:hover {
 
 .age-full {
 	display: inline;
+}
+
+/* Skills & Interest badges - Glassmorphism */
+#skills {
+	margin-bottom: var(--spacing-subsection);
+}
+
+.skills-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+.skill-badge {
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	color: #fff;
+	padding: 10px 16px;
+	border-radius: 25px;
+	font-size: 0.9rem;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-badge:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Language cards - Glassmorphism */
@@ -668,64 +466,216 @@ a:hover {
 	margin-bottom: 3px;
 }
 
-#main {
-	padding-left: 5px;
+/* ==================== MAIN CONTENT SECTIONS ==================== */
+
+/* All major sections have consistent top spacing */
+#github-repos,
+#experiences,
+#formations {
+	margin-top: var(--spacing-section);
 }
 
-#main h2:first-of-type {
-	margin-top: 0;
+/* GitHub repos grid */
+#github-repos .selected-repos {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 16px;
+	margin-top: 20px;
+	align-items: stretch;
 }
 
-/* ==================== RESPONSIVE - MOBILE ==================== */
-
-@media (max-width: 720px) {
-	body {
-		overflow-y: auto;
-		height: auto;
-	}
-
-	#cv {
-		display: flex;
-		flex-direction: column;
-		height: auto;
-		overflow: visible;
-	}
-
-	#sidebar {
-		order: 2;
-		overflow-y: visible;
-		height: auto;
-	}
-
-	#main {
-		order: 1;
-		padding-top: 60px;
-		padding-bottom: 30px;
-		overflow-y: visible;
-		height: auto;
-	}
-
-	#print-pdf-btn {
-		right: 10px;
-	}
-
-	#github-repos .selected-repos {
-		grid-template-columns: 1fr;
-	}
-
-	.formations-grid,
-	.experiences-grid {
-		grid-template-columns: 1fr;
-	}
+/* GitHub repo cards */
+.selected-repo-card {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 16px 16px 70px 16px;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	position: relative;
+	overflow: hidden;
+	min-height: 180px;
 }
 
-/* Large screens: 2 columns for formations and experiences */
-@media (min-width: 1200px) {
+/* Card hover effects (repos, experiences, formations) */
+.selected-repo-card::before,
+.experience-item::before,
+.formation-item::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(229, 57, 53, 0.03), transparent);
+	transition: left 0.5s ease;
+}
 
-	.formations-grid,
-	.experiences-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
+.selected-repo-card:hover::before,
+.experience-item:hover::before,
+.formation-item:hover::before {
+	left: 100%;
+}
+
+.selected-repo-card:hover,
+#profile:hover,
+#summary:hover,
+.experience-item:hover,
+.formation-item:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	border-color: var(--accent);
+}
+
+.selected-repo-card h3 {
+	margin: 0 0 10px 0;
+}
+
+.selected-repo-card h3 a {
+	color: var(--accent);
+	font-weight: 700;
+	transition: color 0.3s ease;
+}
+
+.selected-repo-card h3 a:hover {
+	color: var(--primary);
+}
+
+/* Repo card content positioning */
+.selected-repo-card p {
+	margin: 8px 0;
+	color: var(--text);
+	line-height: 1.5;
+}
+
+.selected-repo-card p:nth-of-type(1) {
+	margin-bottom: 16px;
+}
+
+.selected-repo-card p:nth-of-type(2) {
+	position: absolute;
+	bottom: 35px;
+	left: 16px;
+	right: 16px;
+	color: var(--muted);
+	font-size: 0.85rem;
+	margin: 0;
+}
+
+.selected-repo-card p:nth-of-type(3) {
+	position: absolute;
+	bottom: 10px;
+	left: 16px;
+	right: 16px;
+	color: var(--muted);
+	font-size: 0.85rem;
+	margin: 0;
+}
+
+/* Experiences & Formations */
+.experiences-grid,
+.formations-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
+	align-items: stretch;
+}
+
+.experience-item,
+.formation-item {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 16px;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	position: relative;
+	overflow: hidden;
+}
+
+.experience-item {
+	min-height: 120px;
+	display: flex;
+	flex-direction: column;
+}
+
+.formation-item {
+	padding: 12px 16px;
+}
+
+.missions-list {
+	margin-top: 10px;
+	padding-left: 20px;
+	margin-bottom: 0;
+}
+
+.missions-list li {
+	color: var(--text);
+	line-height: 1.6;
+}
+
+/* Formation structure */
+.formation-title {
+	display: inline;
+}
+
+.formation-item strong {
+	display: inline;
+	color: var(--text);
+	font-size: 1rem;
+}
+
+.formation-details {
+	display: inline;
+	color: var(--text);
+	font-size: 0.95rem;
+	margin-left: 8px;
+}
+
+.formation-school {
+	color: var(--text);
+	font-size: 0.9rem;
+}
+
+.formation-duration {
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+/* Discord elements */
+.discord-vignette {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.discord-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.discord-projects {
+	display: grid;
+	gap: 10px;
+}
+
+.discord-project-card {
+	border: 1px solid var(--border);
+	padding: 12px;
+	border-radius: 8px;
+	background: var(--card);
+}
+
+.discord-project-card .small {
+	font-size: 0.9rem;
+	color: var(--muted);
+}
+
+.discord-name {
+	font-size: 0.9rem;
+	font-weight: 600;
 }
 
 /* ==================== BUTTONS ==================== */
@@ -822,16 +772,52 @@ a:hover {
 	display: none;
 }
 
-/* ==================== PDF FOOTER ==================== */
+/* ==================== RESPONSIVE - MOBILE ==================== */
 
-/* Hide footer on screen, show only when printing */
-#pdf-footer {
-	display: none;
+@media (max-width: 720px) {
+	body {
+		overflow-y: auto;
+		height: auto;
+	}
+
+	#cv {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		overflow: visible;
+	}
+
+	#sidebar {
+		order: 2;
+		overflow-y: visible;
+		height: auto;
+	}
+
+	#main {
+		order: 1;
+		padding-top: 60px;
+		padding-bottom: 30px;
+		overflow-y: visible;
+		height: auto;
+	}
+
+	#print-pdf-btn {
+		right: 10px;
+	}
+
+	#github-repos .selected-repos {
+		grid-template-columns: 1fr;
+	}
+
+	.formations-grid,
+	.experiences-grid {
+		grid-template-columns: 1fr;
+	}
 }
 
-/* ==================== PRINT STYLES FOR PDF A4 ==================== */
-@media (max-width: 720px) {
-	#cv {
-		grid-template-columns: 1fr;
+@media (min-width: 1200px) {
+	.formations-grid,
+	.experiences-grid {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
