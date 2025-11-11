@@ -21,8 +21,8 @@
 	/* Spacing system */
 	--main-padding-top: 8mm;
 	--main-padding-bottom: 15mm;
-	--section-gap: 2mm;
-	--title-spacing: 2mm;
+	--section-gap: 2.5mm;
+	--title-spacing: 3mm;
 	--card-gap: 1.5mm;
 
 	/* Text size system */
@@ -177,7 +177,7 @@ html {
 	width: 30mm;
 	height: 0;
 	display: block;
-	margin: 0 auto 48.5mm auto;
+	margin: 0 auto 49.25mm auto;
 }
 
 /* Compact contact */
