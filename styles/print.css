@@ -21,12 +21,12 @@
 	/* Spacing system */
 	--main-padding-top: 8mm;
 	--main-padding-bottom: 15mm;
-	--section-gap: 4mm;
-	--title-spacing: 4mm;
-	--card-gap: 2mm;
+	--section-gap: 2mm;
+	--title-spacing: 2mm;
+	--card-gap: 1.5mm;
 
 	/* Text size system */
-	--text-xl: 1.4rem;
+	--text-xl: 1.6rem;
 	--text-lg: 0.98rem;
 	--text-md: 0.86rem;
 	--text-sm: 0.78rem;
@@ -177,7 +177,7 @@ html {
 	width: 30mm;
 	height: 0;
 	display: block;
-	margin: 0 auto 30.25mm auto;
+	margin: 0 auto 48.5mm auto;
 }
 
 /* Compact contact */
@@ -240,10 +240,12 @@ html {
 }
 
 .langue-card {
-	padding: 4px 6px;
-	background: white !important;
-	border: 1px solid var(--color-accent-border);
+	padding: 3px 6px;
+	background: transparent !important;
+	border: none !important;
 	box-shadow: none;
+	color: var(--color-text-secondary) !important;
+	font-weight: 500;
 }
 
 .langue-card::before {
@@ -260,6 +262,7 @@ html {
 .langue-level {
 	font-size: var(--text-sm);
 	color: var(--color-text-muted) !important;
+	font-weight: normal;
 }
 
 /* Compact interests */
@@ -298,7 +301,7 @@ html {
 }
 
 #title {
-	font-size: var(--text-xl);
+	font-size: calc(var(--text-xl));
 	margin-top: 0;
 	margin-bottom: 4mm;
 	text-align: center;
@@ -307,13 +310,24 @@ html {
 }
 
 #subtitle {
-	font-size: var(--text-md);
+	/* Match title style in print as well */
+	font-size: calc(var(--text-xl));
 	margin-bottom: var(--section-gap);
 	text-align: center;
-	border-bottom: 1px solid var(--primary);
-	padding-bottom: 2px;
-	color: var(--color-text-secondary);
-	font-weight: 600;
+	color: var(--primary);
+	font-weight: 800;
+	border-bottom: none;
+	padding: 0;
+}
+
+/* Ensure separator and inline layout are removed for print */
+#title::after {
+	content: "" !important;
+}
+
+#title,
+#subtitle {
+	display: block !important;
 }
 
 #profile-section {
@@ -332,12 +346,12 @@ html {
 
 #profile {
 	padding: 5px 7px;
-	font-size: var(--text-sm);
+	font-size: calc(var(--text-sm) + 3px);
 	line-height: 1.2;
 	border: 1px solid var(--border);
 	border-radius: 3px;
 	box-shadow: none;
-	background: white !important;
+	background: var(--color-accent-light) !important;
 	color: var(--color-text-secondary);
 }
 

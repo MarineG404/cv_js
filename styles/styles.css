@@ -51,6 +51,26 @@ html {
 	overflow-x: hidden;
 }
 
+#subtitle {
+	font-size: var(--text-xl);
+	text-align: center;
+	color: var(--primary);
+	font-weight: 800;
+	margin-bottom: var(--title-margin-bottom);
+}
+
+/* On-screen: keep name and post on the same line */
+#title,
+#subtitle {
+	display: inline;
+}
+
+/* Add a small separator on screen after the name */
+#title::after {
+	content: " - ";
+	white-space: pre;
+}
+
 /* ==================== TYPOGRAPHY ==================== */
 
 h1 {
@@ -479,8 +499,9 @@ a:hover {
 #github-repos .selected-repos {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 16px;
-	margin-top: 20px;
+	gap: var(--card-gap);
+	/* remove extra top margin so spacing matches other sections (h2 margin-bottom controls spacing) */
+	margin-top: 0;
 	align-items: stretch;
 }
 
@@ -816,6 +837,7 @@ a:hover {
 }
 
 @media (min-width: 1200px) {
+
 	.formations-grid,
 	.experiences-grid {
 		grid-template-columns: repeat(2, 1fr);
