@@ -177,7 +177,7 @@ html {
 	width: 30mm;
 	height: 0;
 	display: block;
-	margin: 0 auto 49.25mm auto;
+	margin: 0 auto 44.5mm auto;
 }
 
 /* Compact contact */
@@ -303,7 +303,9 @@ html {
 #title {
 	font-size: calc(var(--text-xl));
 	margin-top: 0;
-	margin-bottom: 4mm;
+	/* very tight spacing for print */
+	margin-bottom: 2mm;
+	line-height: 1;
 	text-align: center;
 	color: var(--primary);
 	font-weight: 800;
@@ -312,7 +314,10 @@ html {
 #subtitle {
 	/* Match title style in print as well */
 	font-size: calc(var(--text-xl));
-	margin-bottom: var(--section-gap);
+	/* sit close under title */
+	margin-top: 0;
+	margin-bottom: 0.4mm;
+	line-height: 1;
 	text-align: center;
 	color: var(--primary);
 	font-weight: 800;
