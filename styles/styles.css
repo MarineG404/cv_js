@@ -51,18 +51,22 @@ html {
 	overflow-x: hidden;
 }
 
+/* Make subtitle visually match the h1 title on screen */
 #subtitle {
-	font-size: var(--text-xl);
+	/* match h1 size so both appear identical on web */
+	font-size: 2em;
 	text-align: center;
 	color: var(--primary);
 	font-weight: 800;
-	margin-bottom: var(--title-margin-bottom);
+	margin: 0;
+	line-height: 1;
 }
 
-/* On-screen: keep name and post on the same line */
+/* On-screen: keep name and post on the same line and center them */
 #title,
 #subtitle {
 	display: inline;
+	white-space: nowrap;
 }
 
 /* Add a small separator on screen after the name */
@@ -159,6 +163,13 @@ a:hover {
 	padding: var(--spacing-section) 15px 50px 5px;
 	overflow-y: auto;
 	overflow-x: hidden;
+}
+
+#title-row {
+	text-align: center;
+	margin-bottom: calc(var(--spacing-content) / 2);
+	white-space: nowrap;
+	overflow-x: auto;
 }
 
 #main h2:first-of-type {

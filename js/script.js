@@ -28,19 +28,22 @@ function renderCv(profilData) {
 	cv.appendChild(sidebar);
 	cv.appendChild(main);
 
-	// Title (name) on its own line
+	const titleRow = document.createElement("div");
+	titleRow.id = "title-row";
+
 	const titleEl = document.createElement("h1");
 	titleEl.id = "title";
 	titleEl.textContent = profilData.name;
-	main.appendChild(titleEl);
+	titleRow.appendChild(titleEl);
 
-	// Subtitle / post on the next line
 	if (profilData.post) {
-		const subtitleEl = document.createElement("div");
-		subtitleEl.id = "title";
+		const subtitleEl = document.createElement("span");
+		subtitleEl.id = "subtitle";
 		subtitleEl.textContent = profilData.post;
-		main.appendChild(subtitleEl);
+		titleRow.appendChild(subtitleEl);
 	}
+
+	main.appendChild(titleRow);
 
 	const profileSection = document.createElement("div");
 	profileSection.id = "profile-section";
