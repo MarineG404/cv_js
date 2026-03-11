@@ -305,10 +305,10 @@ function renderCv(profilData) {
 		// Create clickable link
 		const footerText = document.createTextNode("Ce CV a été généré depuis le site ");
 		const link = document.createElement("a");
-		link.href = "https://marine.gonnord.org";
+		link.href = "https://cv.marinegonnord.fr";
 		link.target = "_blank";
 		link.rel = "noopener";
-		link.textContent = "marine.gonnord.org";
+		link.textContent = "cv.marinegonnord.fr";
 
 		pdfFooter.appendChild(footerText);
 		pdfFooter.appendChild(link);
