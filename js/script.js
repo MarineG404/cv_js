@@ -220,15 +220,13 @@ function renderCv(profilData) {
 
 	// MAIN CONTENT
 	// Personal projects
-	const projectsTitle = document.createElement("h2");
-	projectsTitle.textContent = "Projets Personnels";
-	main.appendChild(projectsTitle);
-	const projects = document.createElement("ul");
-	projects.id = "projects";
-
-	// placeholder where selected GitHub repos will be injected
 	const ghReposContainer = document.createElement('div');
 	ghReposContainer.id = 'github-repos';
+
+	const projectsTitle = document.createElement("h2");
+	projectsTitle.textContent = "Projets Personnels";
+	ghReposContainer.appendChild(projectsTitle);
+
 	main.appendChild(ghReposContainer);
 
 	// load and render specific GitHub repos (hardcoded username inside function)

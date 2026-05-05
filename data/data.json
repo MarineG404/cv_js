@@ -1,9 +1,9 @@
 {
 	"name": "Marine GONNORD",
-	"post": "Développeuse Web Full Stack",
+	"post": "Alternance Développement Web",
 	"github": "MarineG404",
 	"profile": "À propos",
-	"summary": "Étudiante en Bachelor Développement Web à l'ORT Lyon 8, je recherche un stage de 3 mois (juin à septembre 2026) afin de mettre en pratique mes compétences en développement full-stack au sein d'une entreprise innovante.",
+	"summary": "Futur étudiante en mastère Développement Web à l'ORT Lyon 8, une alternance à partir de septembre 2026 afin de mettre en pratique mes compétences en développement full-stack au sein d'une entreprise innovante.",
 	"pdfFooter": "Ce CV a été généré depuis le site cv.marinegonnord.fr",
 	"skills": {
 		"Développement": [
@@ -64,6 +64,12 @@
 	"formations": [
 		{
 			"school": "ORT Lyon",
+			"degree": "Mastère EADL",
+			"details": "Mastère Expert en Architecture et Développement Logiciel",
+			"duration": "2026 - 2028"
+		},
+		{
+			"school": "ORT Lyon",
 			"degree": "Bachelor CDWFS",
 			"details": "(Concepteur Développeur Web Full Stack)",
 			"duration": "2025 - 2026"
@@ -102,7 +108,7 @@
 		},
 		{
 			"title": "Communication",
-			"desc": "Communication fanfare 'Les Binioufous', ainsi que pour le festival Auribera (ENM de villeurbanne)."
+			"desc": "Communication fanfare 'Les Binioufous'."
 		}
 	],
 	"contact": [

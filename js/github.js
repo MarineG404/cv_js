@@ -1,10 +1,14 @@
 async function loadSelectedRepos() {
 	const username = "MarineG404";
-	const wantedRepos = ["Fokuz", "Stephagramme", "ADHDragon"];
+	const wantedRepos = ["Fokuz", "Stephagramme"];
 
 	const container = document.getElementById('github-repos');
 	if (!container) return;
+
+	// On vide le conteneur mais on garde le titre h2 s'il existe
+	const title = container.querySelector('h2');
 	container.innerHTML = '';
+	if (title) container.appendChild(title);
 
 	// If list is empty, show a message
 	if (wantedRepos.length === 0) {

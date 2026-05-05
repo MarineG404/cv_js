@@ -510,9 +510,9 @@ a:hover {
 #github-repos .selected-repos {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: var(--card-gap);
-	/* remove extra top margin so spacing matches other sections (h2 margin-bottom controls spacing) */
+	gap: 16px;
 	margin-top: 0;
+	padding-top: 0;
 	align-items: stretch;
 }
 
