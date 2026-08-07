@@ -1,9 +1,10 @@
 {
 	"name": "Marine GONNORD",
-	"post": "Stage Développement Web",
+	"post": "Alternante Développement Web",
 	"github": "MarineG404",
 	"profile": "À propos",
-	"summary": "Futur étudiante en mastère Développement Web à l'ORT Lyon 8,je recherche un stage pour aout 2026 afin de mettre en pratique mes compétences en développement full-stack au sein d'une entreprise innovante.",
+	"summary": "Étudiante en mastère Développement Web (EADL) à l'ORT Lyon 8, actuellement en alternance à la DGFIP jusqu'en 2028 pour mettre en pratique mes compétences en développement full-stack.",
+	"alternanceCompany": "DGFIP",
 	"pdfFooter": "Ce CV a été généré depuis le site cv.marinegonnord.fr",
 	"skills": {
 		"Développement": [
@@ -39,6 +40,30 @@
 		}
 	],
 	"professionalExperiences": [
+		{
+			"position": "Stagiaire développeuse",
+			"company": "Binioufous",
+			"duration": "Août 2026",
+			"missions": [
+				"Modernisation d'une application Symfony (upgrade 5.4 → 7.4 LTS) et migration Webpack Encore vers AssetMapper",
+				"Mise en place de conventions de code et d'un pipeline CI/CD unique (lint, sécurité, déploiement)",
+				"Automatisation du déploiement sur VPS (SSH, migrations, compilation des assets)",
+				"Internationalisation de l'application (français, anglais, breton)",
+				"Prise en main autonome d'un projet existant, en lien avec une association non-technique"
+			]
+		},
+		{
+			"position": "Stagiaire développeuse",
+			"company": "IdiaTech",
+			"duration": "Juin – Juil. 2026",
+			"missions": [
+				"Développement Kotlin Multiplatform et Node.js",
+				"Intégration de systèmes temps réel (appels audio/vidéo WebRTC, messagerie)",
+				"Intégration de plusieurs API de génération vidéo par IA (Midjourney, Pixverse, Runway, Wan)",
+				"Mise en place d'un serveur ComfyUI local et d'un proxy sécurisé pour les clés d'API",
+				"Suivi et résolution de tickets, travail en équipe sur dépôts Git partagé"
+			]
+		},
 		{
 			"position": "Alternante développeuse",
 			"company": "COGICEO",
@@ -93,6 +118,7 @@
 			"duration": "2020 - 2022"
 		}
 	],
+	"certificates": [],
 	"other": [
 		{
 			"title": "Musique",
@@ -114,7 +140,7 @@
 	"contact": [
 		{
 			"type": "location",
-			"label": "Lyon (69006)"
+			"label": "Villeurbanne (69100)"
 		},
 		{
 			"type": "phone",

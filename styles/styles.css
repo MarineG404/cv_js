@@ -1,15 +1,15 @@
 /* ==================== THEME VARIABLES ==================== */
 
 :root[data-theme="light"] {
-	--text: #1c192b;
-	--background: #fbfaff;
-	--primary: #7c3aed;
-	--secondary: #8b5cf6;
-	--accent: #6d28d9;
-	--sidebar-bg: #f3f0ff;
+	--text: #1a1a1a;
+	--background: #fafaf8;
+	--primary: #C44444;
+	--secondary: #D65555;
+	--accent: #E53935;
+	--sidebar-bg: #e8e8e8;
 	--card: #FFFFFF;
-	--muted: #6b6382;
-	--border: #e4dfff;
+	--muted: #666666;
+	--border: #e6e6e6;
 
 	/* Spacing System */
 	--spacing-section: 2.5rem;
@@ -19,15 +19,15 @@
 }
 
 :root[data-theme="dark"] {
-	--text: #f5f3ff;
-	--background: #110e1b;
-	--primary: #a78bfa;
-	--secondary: #8b5cf6;
-	--accent: #c4b5fd;
-	--sidebar-bg: #1f1931;
-	--card: #1f1931;
-	--muted: #9c93b6;
-	--border: #382e54;
+	--text: #E0E0E0;
+	--background: #121212;
+	--primary: #E53935;
+	--secondary: #525252;
+	--accent: #E53935;
+	--sidebar-bg: #1E1E1E;
+	--card: #1E1E1E;
+	--muted: #a0a0a0;
+	--border: #2a2a2a;
 
 	/* Spacing System */
 	--spacing-section: 2.5rem;
@@ -529,10 +529,11 @@ a:hover {
 	min-height: 180px;
 }
 
-/* Card hover effects (repos, experiences, formations) */
+/* Card hover effects (repos, experiences, formations, certificates) */
 .selected-repo-card::before,
 .experience-item::before,
-.formation-item::before {
+.formation-item::before,
+.certificate-item::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -545,7 +546,8 @@ a:hover {
 
 .selected-repo-card:hover::before,
 .experience-item:hover::before,
-.formation-item:hover::before {
+.formation-item:hover::before,
+.certificate-item:hover::before {
 	left: 100%;
 }
 
@@ -553,7 +555,8 @@ a:hover {
 #profile:hover,
 #summary:hover,
 .experience-item:hover,
-.formation-item:hover {
+.formation-item:hover,
+.certificate-item:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 	border-color: var(--accent);
@@ -604,9 +607,10 @@ a:hover {
 	margin: 0;
 }
 
-/* Experiences & Formations */
+/* Experiences, Formations & Certificates */
 .experiences-grid,
-.formations-grid {
+.formations-grid,
+.certificates-grid {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 16px;
@@ -614,7 +618,8 @@ a:hover {
 }
 
 .experience-item,
-.formation-item {
+.formation-item,
+.certificate-item {
 	background: var(--card);
 	border: 1px solid var(--border);
 	border-radius: 12px;
@@ -631,7 +636,8 @@ a:hover {
 	flex-direction: column;
 }
 
-.formation-item {
+.formation-item,
+.certificate-item {
 	padding: 12px 16px;
 }
 
@@ -672,6 +678,39 @@ a:hover {
 .formation-duration {
 	color: var(--muted);
 	font-size: 0.85rem;
+}
+
+/* Certificate structure */
+.certificate-title {
+	display: inline;
+}
+
+.certificate-item strong {
+	display: inline;
+	color: var(--text);
+	font-size: 1rem;
+}
+
+.certificate-org {
+	color: var(--text);
+	font-size: 0.9rem;
+}
+
+.certificate-date {
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+.certificate-link {
+	display: inline-block;
+	margin-top: 6px;
+	color: var(--accent);
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+.certificate-link:hover {
+	color: var(--primary);
 }
 
 /* Discord elements */

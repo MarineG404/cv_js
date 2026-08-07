@@ -295,6 +295,47 @@ function renderCv(profilData) {
 	formations.appendChild(formationsGrid);
 	main.appendChild(formations);
 
+	// Certificates - each entry: { name, organism, date, link }
+	if (profilData.certificates && profilData.certificates.length) {
+		const certificates = document.createElement("div");
+		certificates.id = "certificates";
+		const certTitle = document.createElement("h2");
+		certTitle.textContent = "Certificats";
+		certificates.appendChild(certTitle);
+
+		const certificatesGrid = document.createElement("div");
+		certificatesGrid.className = "certificates-grid";
+
+		profilData.certificates.forEach(cert => {
+			const certItem = document.createElement("div");
+			certItem.className = "certificate-item";
+
+			const title = document.createElement("div");
+			title.className = "certificate-title";
+			title.innerHTML = `<strong>${cert.name}</strong>`;
+			certItem.appendChild(title);
+
+			const orgLine = document.createElement("div");
+			orgLine.className = "certificate-org";
+			orgLine.innerHTML = `<em>${cert.organism}</em> <span class="certificate-date">(${cert.date})</span>`;
+			certItem.appendChild(orgLine);
+
+			if (cert.link) {
+				const link = document.createElement("a");
+				link.className = "certificate-link";
+				link.href = cert.link;
+				link.target = "_blank";
+				link.rel = "noopener";
+				link.textContent = "Voir le certificat";
+				certItem.appendChild(link);
+			}
+
+			certificatesGrid.appendChild(certItem);
+		});
+		certificates.appendChild(certificatesGrid);
+		main.appendChild(certificates);
+	}
+
 	// PDF Footer (only visible when printing)
 	if (profilData.pdfFooter) {
 		const pdfFooter = document.createElement("div");
