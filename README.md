@@ -30,11 +30,17 @@ Ce projet est un CV web dynamique, initialement réalisé dans le cadre d'un cou
 ```
 cv_js/
 ├── index.html
-├── styles.css
-├── script.js
-├── github.js
-├── age-calculator.js
-├── data.json
+├── data/
+│   ├── data.json          # contenu du CV
+│   └── projects.json      # snapshot des repos github/gitlab/framagit (référence, non utilisé par le site)
+├── js/
+│   ├── script.js
+│   ├── github.js           # section "Projets Personnels" (liste blanche de repos)
+│   └── age-calculator.js
+├── styles/
+│   ├── styles.css
+│   └── print.css           # layout PDF A4, une seule page
+├── pdf/                     # exports PDF
 └── README.md
 ```
 

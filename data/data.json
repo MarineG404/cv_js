@@ -19,7 +19,6 @@
 			"Python",
 			"Django",
 			"C++",
-			"C#",
 			"SQL"
 		],
 		"Outils & Environnements": [
@@ -45,11 +44,8 @@
 			"company": "Binioufous",
 			"duration": "Août 2026",
 			"missions": [
-				"Modernisation d'une application Symfony (upgrade 5.4 → 7.4 LTS) et migration Webpack Encore vers AssetMapper",
-				"Mise en place de conventions de code et d'un pipeline CI/CD unique (lint, sécurité, déploiement)",
-				"Automatisation du déploiement sur VPS (SSH, migrations, compilation des assets)",
-				"Internationalisation de l'application (français, anglais, breton)",
-				"Prise en main autonome d'un projet existant, en lien avec une association non-technique"
+				"Modernisation Symfony et internationalisation FR/EN",
+				"Déploiement automatisé sur VPS avec CI/CD, prise en main autonome du projet"
 			]
 		},
 		{
@@ -57,11 +53,8 @@
 			"company": "IdiaTech",
 			"duration": "Juin – Juil. 2026",
 			"missions": [
-				"Développement Kotlin Multiplatform et Node.js",
-				"Intégration de systèmes temps réel (appels audio/vidéo WebRTC, messagerie)",
-				"Intégration de plusieurs API de génération vidéo par IA (Midjourney, Pixverse, Runway, Wan)",
-				"Mise en place d'un serveur ComfyUI local et d'un proxy sécurisé pour les clés d'API",
-				"Suivi et résolution de tickets, travail en équipe sur dépôts Git partagé"
+				"Développement Kotlin Multiplatform / Node.js, intégration WebRTC (audio/vidéo, messagerie)",
+				"Intégration d'API de génération vidéo IA (Midjourney, Pixverse, Runway, Wan) et serveur ComfyUI local"
 			]
 		},
 		{

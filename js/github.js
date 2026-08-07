@@ -1,6 +1,6 @@
 async function loadSelectedRepos() {
 	const username = "MarineG404";
-	const wantedRepos = ["Fokuz", "Stephagramme"];
+	const wantedRepos = ["Fokuz"];
 
 	const container = document.getElementById('github-repos');
 	if (!container) return;
